@@ -33,24 +33,12 @@ add_library(native-activity SHARED
         main.c
         glfm_platform_android.c
         _7_7_7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c
-        #stdlib_dynlib.nim.c
-        #stdlib_posix.nim.c
         stdlib_io.nim.c
         stdlib_system.nim.c
         )
 
 target_include_directories(native-activity PRIVATE
     ${ANDROID_NDK}/sources/android/native_app_glue)
-
-
-#add_library(glfm SHARED glfm_platform_android.c)
-#
-#target_include_directories(glfm PRIVATE
-#        ${ANDROID_NDK}/sources/android/native_app_glue
-#        )
-
-
-
 
 # add lib dependencies
 target_link_libraries(native-activity
