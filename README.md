@@ -3,7 +3,7 @@
 Wrapper of [GLFM](https://github.com/brackeen/glfm) (OpenGL ES and input for iOS and Android) library for Nim.
 
 [GLFM](https://github.com/brackeen/glfm) very simple and is very simmilar to the [GLFW](https://github.com/glfw/glfw) wrapper for desktop apps.
-Together with [GLFM](https://github.com/brackeen/glfm) + [GLFW](https://github.com/glfw/glfw you can writes app for almost any platform.
+Together with [GLFM](https://github.com/brackeen/glfm) + [GLFW](https://github.com/glfw/glfw) you can writes app for almost any platform.
 
 ![example of what both apps look like](examples/screenshot.png)
 
