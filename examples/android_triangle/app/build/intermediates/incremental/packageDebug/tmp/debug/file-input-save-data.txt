@@ -1,0 +1,11 @@
+#Internal package file, do not edit.
+#Sun Sep 15 13:18:45 PDT 2019
+1.base=/p/android-ndk/native-activity/app/build/intermediates/transforms/stripDebugSymbol/debug/0
+0.baseType=DIRECTORY
+1.baseType=DIRECTORY
+count=2
+1.set=NATIVE_RESOURCE
+0.path=classes.dex
+0.set=DEX
+0.base=/p/android-ndk/native-activity/app/build/intermediates/dex/debug/mergeDexDebug/out
+1.path=lib/x86/libnative-activity.so

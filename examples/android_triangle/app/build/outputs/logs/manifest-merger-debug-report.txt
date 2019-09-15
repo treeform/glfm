@@ -1,0 +1,162 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:3:1-31:12
+INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:3:1-31:12
+INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:3:1-31:12
+INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:3:1-31:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/1e1e93b3f4badcb3a9249f52cf43a6d7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/44932839261e6ddfd0595d6b51b600b5/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/d6bd90c5edd9f3e45ed34b7d93c4a8f9/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/d24359cc419f3ba5882214912a49679d/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/1c027104b49e044a07566ba8d8a6c923/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/25cc98f49e94cba15eab56629ad001af/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/3c179faf1935657be9b3316791b06488/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/0c24b601593a763dd421a92d75bbd6fd/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/60036c15dcc83da71132172436cc38db/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/d22c0c53873a66d2e77ecf3bc717406a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/3f88182b7bc4e03e13cb85caa5c41e12/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/ca034b4010fe2d849230961de2e1c56d/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/0757b853131c0502e8df7793d353c40a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/36cb037f21f0b952df5d6e8613bf43fc/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/0df184b8b7abdf6db94de93ac618a4cf/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/79a8bc95d2185760f67a5cb17dae82ad/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/8bb793584b44cbc285eb4be0a7645f4d/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/c5b14cc9961d1f755654fa6beb4cf165/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/9839369b3639bd335d796d733403bda0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/fd4d6ffb12c24f61776838c1eacbe6e0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/069d34262f27be5395d7eee3a61aaac7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/acc912965d9e426e7f7f0f4d1d888fac/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/45f98e15cbf47e8b9f74410f9c809068/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/d02b8f51f63ff7d9afb346049e52ee59/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/af02affa53ab440adf2b97146182c3e1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/0cba2613dfbe43b169a6e6fdc63e8c46/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/c4f56f68c78d72b497005ffd6ecd8ae5/AndroidManifest.xml:17:1-22:12
+INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:3:1-31:12
+INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:3:1-31:12
+INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:3:1-31:12
+	package
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:4:11-48
+		INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+		INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:6:11-36
+		INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+		INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:3:11-69
+	android:versionCode
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:5:11-34
+		INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+		INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+application
+ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:9:3-29:17
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/44932839261e6ddfd0595d6b51b600b5/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/44932839261e6ddfd0595d6b51b600b5/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.0.1] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/79a8bc95d2185760f67a5cb17dae82ad/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/79a8bc95d2185760f67a5cb17dae82ad/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/8bb793584b44cbc285eb4be0a7645f4d/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/8bb793584b44cbc285eb4be0a7645f4d/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.1] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/79a8bc95d2185760f67a5cb17dae82ad/AndroidManifest.xml:22:18-86
+	android:label
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:13:7-39
+	android:hasCode
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:14:7-30
+	android:fullBackupContent
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:11:7-40
+	android:icon
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:12:7-41
+	android:allowBackup
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:10:7-34
+activity#android.app.NativeActivity
+ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:18:5-28:16
+	android:label
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:19:15-47
+	android:configChanges
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:20:15-65
+	android:name
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:18:15-56
+meta-data#android.app.lib_name
+ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:22:7-23:52
+	android:value
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:23:18-49
+	android:name
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:22:18-53
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:24:7-27:23
+action#android.intent.action.MAIN
+ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:25:9-61
+	android:name
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:25:17-58
+category#android.intent.category.LAUNCHER
+ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:26:9-69
+	android:name
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml:26:19-66
+uses-sdk
+INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/1e1e93b3f4badcb3a9249f52cf43a6d7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/1e1e93b3f4badcb3a9249f52cf43a6d7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/44932839261e6ddfd0595d6b51b600b5/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/44932839261e6ddfd0595d6b51b600b5/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/d6bd90c5edd9f3e45ed34b7d93c4a8f9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/d6bd90c5edd9f3e45ed34b7d93c4a8f9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/d24359cc419f3ba5882214912a49679d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/d24359cc419f3ba5882214912a49679d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/1c027104b49e044a07566ba8d8a6c923/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/1c027104b49e044a07566ba8d8a6c923/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/25cc98f49e94cba15eab56629ad001af/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/25cc98f49e94cba15eab56629ad001af/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/3c179faf1935657be9b3316791b06488/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/3c179faf1935657be9b3316791b06488/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/0c24b601593a763dd421a92d75bbd6fd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/0c24b601593a763dd421a92d75bbd6fd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/60036c15dcc83da71132172436cc38db/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/60036c15dcc83da71132172436cc38db/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/d22c0c53873a66d2e77ecf3bc717406a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/d22c0c53873a66d2e77ecf3bc717406a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/3f88182b7bc4e03e13cb85caa5c41e12/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/3f88182b7bc4e03e13cb85caa5c41e12/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/ca034b4010fe2d849230961de2e1c56d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/ca034b4010fe2d849230961de2e1c56d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/0757b853131c0502e8df7793d353c40a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/0757b853131c0502e8df7793d353c40a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/36cb037f21f0b952df5d6e8613bf43fc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/36cb037f21f0b952df5d6e8613bf43fc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/0df184b8b7abdf6db94de93ac618a4cf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/0df184b8b7abdf6db94de93ac618a4cf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/79a8bc95d2185760f67a5cb17dae82ad/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/79a8bc95d2185760f67a5cb17dae82ad/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/8bb793584b44cbc285eb4be0a7645f4d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/8bb793584b44cbc285eb4be0a7645f4d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/c5b14cc9961d1f755654fa6beb4cf165/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/c5b14cc9961d1f755654fa6beb4cf165/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/9839369b3639bd335d796d733403bda0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/9839369b3639bd335d796d733403bda0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/fd4d6ffb12c24f61776838c1eacbe6e0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/fd4d6ffb12c24f61776838c1eacbe6e0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/069d34262f27be5395d7eee3a61aaac7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/069d34262f27be5395d7eee3a61aaac7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/acc912965d9e426e7f7f0f4d1d888fac/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/acc912965d9e426e7f7f0f4d1d888fac/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/45f98e15cbf47e8b9f74410f9c809068/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/45f98e15cbf47e8b9f74410f9c809068/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/d02b8f51f63ff7d9afb346049e52ee59/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/d02b8f51f63ff7d9afb346049e52ee59/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/af02affa53ab440adf2b97146182c3e1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/af02affa53ab440adf2b97146182c3e1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/0cba2613dfbe43b169a6e6fdc63e8c46/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/0cba2613dfbe43b169a6e6fdc63e8c46/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/c4f56f68c78d72b497005ffd6ecd8ae5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/c4f56f68c78d72b497005ffd6ecd8ae5/AndroidManifest.xml:20:5-44
+INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+		INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+		ADDED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml
+		INJECTED from /p/android-ndk/native-activity/app/src/main/AndroidManifest.xml

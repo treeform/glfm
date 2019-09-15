@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/p/android-ndk/native-activity/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v25/values-v25.xml",
+            "map": [
+                {
+                    "source": "/Users/andre.vonhouck/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/1e1e93b3f4badcb3a9249f52cf43a6d7/res/values-v25/values-v25.xml",
+                    "from": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,126,209,308",
+                        "endLines": "2,3,5,7",
+                        "endColumns": "70,82,12,12",
+                        "endOffsets": "121,204,303,414"
+                    }
+                }
+            ]
+        }
+    ]
+}
