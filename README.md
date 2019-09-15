@@ -1,11 +1,15 @@
-# glfm
+# GLFM
 
-Wrapper of GLFM (OpenGL ES and input for iOS and Android) library for Nim.
+Wrapper of [GLFM](https://github.com/brackeen/glfm) (OpenGL ES and input for iOS and Android) library for Nim.
 
-Its very simple and is very simmilar to the GLFW wrapper for desktop apps.
-Together with GLFW + GLFM you can writes app for almost any platform.
+[GLFM](https://github.com/brackeen/glfm) very simple and is very simmilar to the [GLFW](https://github.com/glfw/glfw) wrapper for desktop apps.
+Together with [GLFM](https://github.com/brackeen/glfm) + [GLFW](https://github.com/glfw/glfw you can writes app for almost any platform.
 
 ![example of what both apps look like](examples/screenshot.png)
+
+Compiling Nim for mobile platforms is not simple. It requires having XCode and Android Studio which have very many steps and settings they perform.
+
+In this repo I have included two projects for XCode and Android Studio which you should be able to just open and hit compile.
 
 # Compiling for iOS:
 
@@ -50,6 +54,6 @@ Now copy the generated C files into the Android project folder
 
 ```cp ~/.cache/nim/main_d/* android_triangle/app/src/main/cpp/; cp android_triangle/app/src/main/cpp/main.nim.c android_triangle/app/src/main/cpp/main.c```
 
-Then you go to android studio and hit compile:
+Then you go to Android Studio and hit compile:
 
 ![android stuido](examples/androidstudio.png)
