@@ -14,6 +14,22 @@ Tested with:
   * XCode Version 10.3 (10G8)
   * Nim Compiler Version 0.20.99 [MacOSX: amd64]
 
+```cp examples```
+
+Compile everything for iOS:
+
+```nim c -c --os:android main.nim```
+
+(Yes saying android when compilng for iOS is very odd but its as close to mobile as you get)
+
+Now copy the generated C files into the iOS project folder
+
+```cp ~/.cache/nim/main_d/* ios_triangle/example/src/; cp ios_triangle/example/src/main.nim.c ios_triangle/example/src/main.c```
+
+Then you go to XCode and hit compile:
+
+![android stuido](examples/xcode.png)
+
 # Compiling for Android
 
 Tested with:
@@ -30,7 +46,10 @@ Compile everything for android running arm processor:
 
 ```nim c -c --cpu:arm --os:android main.nim```
 
-Now copy the generated C files into the anroid project folder
+Now copy the generated C files into the Android project folder
 
 ```cp ~/.cache/nim/main_d/* android_triangle/app/src/main/cpp/; cp android_triangle/app/src/main/cpp/main.nim.c android_triangle/app/src/main/cpp/main.c```
 
+Then you go to android studio and hit compile:
+
+![android stuido](examples/androidstudio.png)

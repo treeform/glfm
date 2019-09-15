@@ -205,7 +205,7 @@ proc onFrame*(display: ptr GLFMDisplay; frameTime: cdouble) {.exportc.} =
   var vertices = [
     + 0.0.float32, + 0.5, 0.0, 1.0, 0.0, 0.0,
     - 0.5, - 0.5, 0.0, 0.0, 1.0, 0.0,
-    + 0.5, - 0.5, 0.0, 0.0, 0.0, 1.0] ##  x,y,z, r,g,b
+    + 0.5, - 0.5, 0.0, 1.0, 1.0, 1.0] ##  x,y,z, r,g,b
 
   echo "glBufferData", vertices.len*4
   glBufferData(GL_ARRAY_BUFFER, vertices.len*4, addr(vertices[0]), GL_STATIC_DRAW)
