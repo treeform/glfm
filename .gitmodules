@@ -1,0 +1,3 @@
+[submodule "glfm"]
+    path = glfm
+    url = git@github.com:brackeen/glfm.git
