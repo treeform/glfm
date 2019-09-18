@@ -36,12 +36,12 @@ elif defined(emscripten):
   const
     GLFM_PLATFORM_EMSCRIPTEN* = true
 elif defined(ios):
-  when TARGET_OS_IOS:
-    const
-      GLFM_PLATFORM_IOS* = true
-  elif TARGET_OS_TV:
+  when defined(TARGET_OS_TV):
     const
       GLFM_PLATFORM_TVOS* = true
+  else:
+    const
+      GLFM_PLATFORM_IOS* = true
 
 
 ##  OpenGL ES includes
@@ -300,5 +300,10 @@ proc glfmSetKeyboardVisibilityChangedFunc*(display: ptr GLFMDisplay;
     visibilityChangedFunc: GLFMKeyboardVisibilityChangedFunc)
 when defined(android):
   proc glfmAndroidGetActivity*(): pointer #ptr ANativeActivity
+
+proc glfmHomeDir*(): cstring
+proc glfmBundleDir*(): cstring
+proc glfmReadFileSize*(filename: cstring): cint
+proc glfmReadFileBuffer*(filename, buffer: cstring): cint
 
 {.pop.}

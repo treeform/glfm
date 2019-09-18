@@ -61,7 +61,8 @@ proc onTouch*(display: ptr GLFMDisplay; touch: cint; phase: GLFMTouchPhase; x: c
     #dec(app.offsetY, 2 * (y - app.lastTouchY) / float(height))
     app.offsetY -= 2 * (y - app.lastTouchY) / float(height)
 
-    echo "touch"
+    echo "touch", app.offsetX, " ", app.offsetY
+
 
   app.lastTouchX = x
   app.lastTouchY = y
@@ -198,14 +199,14 @@ proc onFrame*(display: ptr GLFMDisplay; frameTime: cdouble) {.exportc.} =
 
 
   echo "vertices"
-  # var vertices = [
-  #   float32(app.offsetX) + 0.0, app.offsetY + 0.5, 0.0, 1.0, 0.0, 0.0,
-  #   app.offsetX - 0.5, app.offsetY - 0.5, 0.0, 0.0, 1.0, 0.0,
-  #   app.offsetX + 0.5, app.offsetY - 0.5, 0.0, 0.0, 0.0, 1.0] ##  x,y,z, r,g,b
   var vertices = [
-    + 0.0.float32, + 0.5, 0.0, 1.0, 0.0, 0.0,
-    - 0.5, - 0.5, 0.0, 0.0, 1.0, 0.0,
-    + 0.5, - 0.5, 0.0, 0.0, 0.0, 1.0] ##  x,y,z, r,g,b
+    float32(app.offsetX) + 0.0, app.offsetY + 0.5, 0.0, 1.0, 0.0, 0.0,
+    app.offsetX - 0.5, app.offsetY - 0.5, 0.0, 0.0, 1.0, 0.0,
+    app.offsetX + 0.5, app.offsetY - 0.5, 0.0, 0.0, 0.0, 1.0] ##  x,y,z, r,g,b
+  # var vertices = [
+  #   + 0.0.float32, + 0.5, 0.0, 1.0, 0.0, 0.0,
+  #   - 0.5, - 0.5, 0.0, 0.0, 1.0, 0.0,
+  #   + 0.5, - 0.5, 0.0, 0.0, 0.0, 1.0] ##  x,y,z, r,g,b
 
   echo "glBufferData", vertices.len*4
   glBufferData(GL_ARRAY_BUFFER, vertices.len*4, addr(vertices[0]), GL_STATIC_DRAW)

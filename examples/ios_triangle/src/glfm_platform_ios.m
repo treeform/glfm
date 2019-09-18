@@ -2,13 +2,13 @@
  GLFM
  https://github.com/brackeen/glfm
  Copyright (c) 2014-2019 David Brackeen
- 
+
  This software is provided 'as-is', without any express or implied warranty.
  In no event will the authors be held liable for any damages arising from the
  use of this software. Permission is granted to anyone to use this software
  for any purpose, including commercial applications, and to alter it and
  redistribute it freely, subject to the following restrictions:
- 
+
  1. The origin of this software must not be misrepresented; you must not
     claim that you wrote the original software. If you use this software in a
     product, an acknowledgment in the product documentation would be appreciated
@@ -997,5 +997,49 @@ bool glfmIsKeyboardVisible(GLFMDisplay *display) {
         return false;
     }
 }
+
+char* glfmHomeDir() {
+    return getenv("HOME");
+}
+
+char* glfmBundleDir() {
+    NSString* filePath = [NSBundle mainBundle].resourcePath;
+    return filePath.UTF8String;
+}
+
+int glfmReadFileSize(char* filename) {
+    // Get size of file from packed assets
+    NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@(filename)];
+    FILE *f = fopen(filePath.UTF8String, "r");
+    fseek(f, 0, SEEK_END);
+    return ftell(f);
+}
+
+int glfmReadFileBuffer(char* filename, char* buffer) {
+    // Read in file from packed assets into a buffer
+    NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@(filename)];
+    FILE *f = fopen(filePath.UTF8String, "r");
+    fseek(f, 0, SEEK_END);
+    long fsize = ftell(f);
+    fseek(f, 0, SEEK_SET);
+    fread(buffer, 1, fsize, f);
+    fclose(f);
+    return fsize;
+}
+
+// char* glfmReadFile(char* filename) {
+//     // Read in file as a string
+//     //NSString* filePath = [[NSBundle mainBundle] pathForResource:@(name) ofType:@(ext) inDirectory:@(directory)];
+//     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@(filename)];
+//     FILE *f = fopen(filePath.UTF8String, "r");
+//     fseek(f, 0, SEEK_END);
+//     long fsize = ftell(f);
+//     fseek(f, 0, SEEK_SET);  /* same as rewind(f); */
+//     char *string = malloc(fsize + 1);
+//     fread(string, 1, fsize, f);
+//     fclose(f);
+//     string[fsize] = 0;
+//     return string;
+// }
 
 #endif

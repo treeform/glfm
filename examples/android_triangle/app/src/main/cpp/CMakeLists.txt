@@ -30,11 +30,18 @@ set(CMAKE_SHARED_LINKER_FLAGS
     "${CMAKE_SHARED_LINKER_FLAGS} -v -u ANativeActivity_onCreate")
 
 add_library(native-activity SHARED
-        main.c
+        "@m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c"
+        @mmain.nim.c
         glfm_platform_android.c
-        _7_7_7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c
+
+        stdlib_allocators.nim.c
+        #stdlib_assertions.nim.c
         stdlib_io.nim.c
+        #stdlib_os.nim.c
+        #stdlib_pathnorm.nim.c
+        stdlib_strutils.nim.c
         stdlib_system.nim.c
+        stdlib_times.nim.c
         )
 
 target_include_directories(native-activity PRIVATE

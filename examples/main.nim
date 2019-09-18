@@ -2,11 +2,6 @@
 
 import glfm, opengl
 
-# let
-#   FILE_COMPAT_ANDROID_ACTIVITY* = glfmAndroidGetActivity()
-
-# import
-#   file_compat
 
 type
   ExampleApp* = object
@@ -61,7 +56,8 @@ proc onTouch*(display: ptr GLFMDisplay; touch: cint; phase: GLFMTouchPhase; x: c
     #dec(app.offsetY, 2 * (y - app.lastTouchY) / float(height))
     app.offsetY -= 2 * (y - app.lastTouchY) / float(height)
 
-    echo "touch"
+    echo "touch", app.offsetX, " ", app.offsetY
+
 
   app.lastTouchX = x
   app.lastTouchY = y
@@ -104,6 +100,7 @@ proc onSurfaceDestroyed*(display: ptr GLFMDisplay) =
   app.vertexBuffer = 0
 
 proc compileShader*(`type`: GLenum; shaderString: string): GLuint =
+
   # var fullPath: array[PATH_MAX, char]
   # fc_resdir(fullPath, sizeof((fullPath)))
   # strncat(fullPath, shaderName, sizeof((fullPath)) - strlen(fullPath) - 1)
@@ -148,23 +145,26 @@ proc compileShader*(`type`: GLenum; shaderString: string): GLuint =
     shader = 0
   return shader
 
-const
-  simpleVert = staticRead("simple.vert")
-  simpleFrag = staticRead("simple.frag")
+# const
+#   simpleVert = staticRead("simple.vert")
+#   simpleFrag = staticRead("simple.frag")
 
-
+proc readAssetFile*(filename: string): string =
+  let size = int glfmReadFileSize(filename)
+  result = newString(size)
+  discard glfmReadFileBuffer(filename, result)
 
 proc onFrame*(display: ptr GLFMDisplay; frameTime: cdouble) {.exportc.} =
   #var app: ptr ExampleApp = cast[ptr ExampleApp](glfmGetUserData(display))
-  echo "onFrame"
+  #echo "onFrame"
   ##  Draw background
   glClearColor(0.0, 0.0, 0.0, 1.0)
   glClear(GL_COLOR_BUFFER_BIT)
   ##  Draw triangle
   if app.program == 0:
     echo "setup"
-    var vertShader: GLuint = compileShader(GL_VERTEX_SHADER, simpleVert)
-    var fragShader: GLuint = compileShader(GL_FRAGMENT_SHADER, simpleFrag)
+    var vertShader: GLuint = compileShader(GL_VERTEX_SHADER, readAssetFile("simple.vert"))
+    var fragShader: GLuint = compileShader(GL_FRAGMENT_SHADER, readAssetFile("simple.frag"))
     if vertShader == 0 or fragShader == 0:
       glfmSetMainLoopFunc(display, nil)
       return
@@ -178,12 +178,41 @@ proc onFrame*(display: ptr GLFMDisplay; frameTime: cdouble) {.exportc.} =
     glDeleteShader(fragShader)
     echo "setup done"
 
-  echo "glUseProgram"
+    # {.emit: """
+    # printf("filePath: %s\n", getenv("HOME"));
+    # """.}
+
+    # echo "path to resources"
+    # echo "home dir:", glfmHomeDir()
+
+    # echo "getCurrentDir:", getCurrentDir()
+    # echo "getAppDir", getAppDir()
+    # echo glfmBundleDir()
+
+    # for e in @["PWD", "HOME", "LANG", "TMPDIR", "ANDROID_DATA", "LD_PRELOAD"]:
+    #   if existsEnv(e):
+    #     echo e, ": ", getEnv(e)
+    #   else:
+    #     echo e, ": ", "Does not exist"
+
+    # for n, k in envPairs():
+    #   echo n, ": ",k
+    # echo "{{{{"
+    # echo readAssetFile("data.txt")
+    # echo "}}}}"
+    # echo readAssetFile("icons/data.txt")
+    # echo readFile($glfmBundleDir() & "/icons/data.txt")
+
+    # echo "starting to read file"
+    # echo staticRead("../assets/data.txt")
+    # echo "end read file"
+
+  #echo "glUseProgram"
   glUseProgram(app.program)
-  echo "glGenBuffers"
+  #echo "glGenBuffers"
   if app.vertexBuffer == 0:
     glGenBuffers(1, addr(app.vertexBuffer))
-  echo "glBindBuffer"
+  #echo "glBindBuffer"
   glBindBuffer(GL_ARRAY_BUFFER, app.vertexBuffer)
   var stride: GLsizei = sizeof(GLfloat) * 6
   glEnableVertexAttribArray(0)
@@ -197,19 +226,26 @@ proc onFrame*(display: ptr GLFMDisplay; frameTime: cdouble) {.exportc.} =
   # echo app.offsetY
 
 
-  echo "vertices"
-  # var vertices = [
-  #   float32(app.offsetX) + 0.0, app.offsetY + 0.5, 0.0, 1.0, 0.0, 0.0,
-  #   app.offsetX - 0.5, app.offsetY - 0.5, 0.0, 0.0, 1.0, 0.0,
-  #   app.offsetX + 0.5, app.offsetY - 0.5, 0.0, 0.0, 0.0, 1.0] ##  x,y,z, r,g,b
-  var vertices = [
-    + 0.0.float32, + 0.5, 0.0, 1.0, 0.0, 0.0,
-    - 0.5, - 0.5, 0.0, 0.0, 1.0, 0.0,
-    + 0.5, - 0.5, 0.0, 1.0, 1.0, 1.0] ##  x,y,z, r,g,b
+  #echo "vertices"
+  # app.offsetX = 0.0
+  # app.offsetY = 0.0
 
-  echo "glBufferData", vertices.len*4
+  #echo "pre allocation"
+
+  var vertices = @[
+    app.offsetX.float32 + 0.0.float32, app.offsetY.float32 + 0.5, 0.0, 1.0, 0.0, 0.0,
+    app.offsetX.float32 - 0.5.float32, app.offsetY.float32 - 0.5, 0.0, 0.0, 1.0, 0.0,
+    app.offsetX.float32 + 0.5.float32, app.offsetY.float32 - 0.5, 0.0, 0.0, 0.0, 1.0] ##  x,y,z, r,g,b
+  #echo "post allocation"
+
+  # var vertices = @[
+  #   + 0.0.float32, + 0.5, 0.0, 1.0, 0.0, 0.0,
+  #   - 0.5, - 0.5, 0.0, 0.0, 1.0, 0.0,
+  #   + 0.5, - 0.5, 0.0, 0.0, 0.0, 1.0] ##  x,y,z, r,g,b
+
+  #echo "glBufferData", vertices.len*4
   glBufferData(GL_ARRAY_BUFFER, vertices.len*4, addr(vertices[0]), GL_STATIC_DRAW)
-  echo "glDrawArrays"
+  #echo "glDrawArrays"
   glDrawArrays(GL_TRIANGLES, 0, 3)
 
-  echo "done onFrame"
+  #echo "done onFrame"

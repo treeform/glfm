@@ -5,6 +5,7 @@
 
 #include "nimbase.h"
 #include <string.h>
+#include <setjmp.h>
 #undef LANGUAGE_C
 #undef MIPSEB
 #undef MIPSEL
@@ -29,8 +30,18 @@
   #  define nimln_(n, file) \
       FR_.line = n; FR_.filename = file;
   typedef struct tyObject_ExampleApp_wvlZowQbd9bpaVzqNaWWC0Q tyObject_ExampleApp_wvlZowQbd9bpaVzqNaWWC0Q;
-typedef struct NimStringDesc NimStringDesc;
-typedef struct TGenericSeq TGenericSeq;
+typedef struct NimStrPayload NimStrPayload;
+typedef struct AllocatorObj AllocatorObj;
+typedef struct NimStringV2 NimStringV2;
+typedef struct Exception Exception;
+typedef struct RootObj RootObj;
+typedef struct TNimType TNimType;
+typedef struct tySequence_uB9b75OUPRENsBAu4AnoePA tySequence_uB9b75OUPRENsBAu4AnoePA;
+typedef struct tySequence_uB9b75OUPRENsBAu4AnoePA_Content tySequence_uB9b75OUPRENsBAu4AnoePA_Content;
+typedef struct TSafePoint TSafePoint;
+typedef struct tySequence_4Xyxy0Om14N6K1l5e9bUPSQ tySequence_4Xyxy0Om14N6K1l5e9bUPSQ;
+typedef struct tySequence_4Xyxy0Om14N6K1l5e9bUPSQ_Content tySequence_4Xyxy0Om14N6K1l5e9bUPSQ_Content;
+typedef struct tyObject_StackTraceEntry_oLyohQ7O2XOvGnflOss8EA tyObject_StackTraceEntry_oLyohQ7O2XOvGnflOss8EA;
 struct tyObject_ExampleApp_wvlZowQbd9bpaVzqNaWWC0Q {
 NU32 program;
 NU32 vertexBuffer;
@@ -73,19 +84,89 @@ N_NIMCALL_PTR(NIM_BOOL, ClP_0) (void** display, tyEnum_GLFMKey_DYBF2avdaFQVSDz06
 void* ClE_0;
 } tyProc_uOgf9cK9bYdCzJtU4ddQIH9aQ;
 typedef N_CLOSURE_PTR(NIM_BOOL, TM_zG6mA2D5kuOdfHNU9b6qlqQ_7) (void** display, tyEnum_GLFMKey_DYBF2avdaFQVSDz063lKrQ keyCode, tyEnum_GLFMKeyAction_dF5XKgm9b7rwfeDcf1UydiA action, int modifiers, void* ClE_0);
-struct TGenericSeq {
-NI len;
-NI reserved;
-};
-struct NimStringDesc {
-  TGenericSeq Sup;
+struct NimStrPayload {
+NI cap;
+AllocatorObj* allocator;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-typedef NimStringDesc* tyArray_nHXaesL0DJZHyVS07ARPRA[1];
+struct NimStringV2 {
+NI len;
+NimStrPayload* p;
+};
+struct TNimType {
+void* destructor;
+NI size;
+NCSTRING name;
+};
+struct RootObj {
+TNimType* m_type;
+};
+struct tySequence_uB9b75OUPRENsBAu4AnoePA {
+  NI len; tySequence_uB9b75OUPRENsBAu4AnoePA_Content* p;
+};
+struct Exception {
+  RootObj Sup;
+Exception* parent;
+NCSTRING name;
+NimStringV2 message;
+tySequence_uB9b75OUPRENsBAu4AnoePA trace;
+NU raiseId;
+Exception* up;
+};
+typedef struct {
+N_NIMCALL_PTR(NIM_BOOL, ClP_0) (Exception* e, void* ClE_0);
+void* ClE_0;
+} tyProc_NT9bSe2DDkjdtx7j9aov2Z6g;
+struct TSafePoint {
+TSafePoint* prev;
+NI status;
+jmp_buf context;
+NIM_BOOL hasRaiseAction;
+tyProc_NT9bSe2DDkjdtx7j9aov2Z6g raiseAction;
+};
+typedef NimStringV2 tyArray_sMpvt1sOxOJ3LFGulnbeMQ[4];
+struct tySequence_4Xyxy0Om14N6K1l5e9bUPSQ {
+  NI len; tySequence_4Xyxy0Om14N6K1l5e9bUPSQ_Content* p;
+};
+typedef NimStringV2 tyArray_nHXaesL0DJZHyVS07ARPRA[1];
 typedef NCSTRING tyArray_NmEsK2qSxmxyFA4fWeYieg[1];
-typedef NimStringDesc* tyArray_Re75IspeoxXy2oCZHwcRrA[2];
-typedef NF32 tyArray_G3UmgAkY79bNxQUIZv9aDe9bw[18];
-N_NIMCALL(void, glfmMain)(void** display);
+typedef NimStringV2 tyArray_Re75IspeoxXy2oCZHwcRrA[2];
+typedef N_NIMCALL_PTR(void*, tyProc_g4DU8Xso7TeLfKjjMA54hg) (AllocatorObj* a, NI size, NI alignment);
+typedef N_NIMCALL_PTR(void, tyProc_f0fmYWZ9bBl5n2coKW0dYBQ) (AllocatorObj* a, void* p, NI size);
+typedef N_NIMCALL_PTR(void*, tyProc_pc9bof8Viqlm9byLAeLaBy4g) (AllocatorObj* a, void* p, NI oldSize, NI newSize);
+typedef N_NIMCALL_PTR(void, tyProc_up7108S0Kt9cUg781lCWRSQ) (AllocatorObj* a);
+typedef NU8 tySet_tyEnum_AllocatorFlag_djJDT3jOEYT7cpwNwzEzRg;
+struct AllocatorObj {
+TNimType* m_type;
+tyProc_g4DU8Xso7TeLfKjjMA54hg alloc;
+tyProc_f0fmYWZ9bBl5n2coKW0dYBQ dealloc;
+tyProc_pc9bof8Viqlm9byLAeLaBy4g realloc;
+tyProc_up7108S0Kt9cUg781lCWRSQ deallocAll;
+tySet_tyEnum_AllocatorFlag_djJDT3jOEYT7cpwNwzEzRg flags;
+NCSTRING name;
+NI allocCount;
+NI deallocCount;
+};
+struct tyObject_StackTraceEntry_oLyohQ7O2XOvGnflOss8EA {
+NCSTRING procname;
+NI line;
+NCSTRING filename;
+};
+
+
+#ifndef tySequence_uB9b75OUPRENsBAu4AnoePA_Content_PP
+#define tySequence_uB9b75OUPRENsBAu4AnoePA_Content_PP
+struct tySequence_uB9b75OUPRENsBAu4AnoePA_Content { NI cap;AllocatorObj* allocator;tyObject_StackTraceEntry_oLyohQ7O2XOvGnflOss8EA data[SEQ_DECL_SIZE];};
+#endif
+
+      
+
+#ifndef tySequence_4Xyxy0Om14N6K1l5e9bUPSQ_Content_PP
+#define tySequence_4Xyxy0Om14N6K1l5e9bUPSQ_Content_PP
+struct tySequence_4Xyxy0Om14N6K1l5e9bUPSQ_Content { NI cap;AllocatorObj* allocator;NF32 data[SEQ_DECL_SIZE];};
+#endif
+
+      N_NIMCALL(void, glfmMain)(void** display);
 N_NIMCALL(void, glfmSetDisplayConfig)(void** display, tyEnum_GLFMRenderingAPI_89azhV1FN9ch7ehZMZbxus4Q preferredAPI, tyEnum_GLFMColorFormat_nUNDU68er8APh3i5IGBrQw colorFormat, tyEnum_GLFMDepthFormat_ht9aqGitR8QkJwdbpcyppwA depthFormat, tyEnum_GLFMStencilFormat_s9bBkBlCzOH0vk5Yf3OCpNg stencilFormat, tyEnum_GLFMMultisample_nlYmaD9cZ4JEmzBJfgfMO8w multisample);
 N_NIMCALL(void, glfmSetUserData)(void** display, void* userData);
 N_NIMCALL(void, glfmSetSurfaceCreatedFunc)(void** display, tyProc_KNiNOTQumxFz2O1GcNzZJw surfaceCreatedFunc);
@@ -100,29 +181,36 @@ static N_INLINE(void, nimFrame)(TFrame* s);
 N_LIB_PRIVATE N_NOINLINE(void, callDepthLimitReached_mMRdr4sgmnykA9aWeM9aDZlw)(void);
 static N_INLINE(void, popFrame)(void);
 static N_INLINE(void, initStackBottomWith)(void* locals);
-N_NOINLINE(void, nimGC_setStackBottom)(void* theStackBottom);
 N_LIB_PRIVATE N_NIMCALL(NIM_BOOL, onKey_uWY4nU4MQDfQof1Mqle7QA)(void** display, tyEnum_GLFMKey_DYBF2avdaFQVSDz063lKrQ keyCode, tyEnum_GLFMKeyAction_dF5XKgm9b7rwfeDcf1UydiA action, int modifiers);
 static N_INLINE(void, minuseq__2gGQPdUypkoO8EiDQJwWdwsystem)(double* x, double y);
 static N_INLINE(void, pluseq__2gGQPdUypkoO8EiDQJwWdw_2system)(double* x, double y);
 N_LIB_PRIVATE N_NIMCALL(NIM_BOOL, onTouch_6bNY2sUeizqXr9cS9aIO9aGzQ)(void** display, int touch, tyEnum_GLFMTouchPhase_GpIScK4l6I2acWGc9czJhrg phase, double x, double y);
+static N_INLINE(void, pushSafePoint)(TSafePoint* s);
+static N_INLINE(void, popSafePoint)(void);
+N_LIB_PRIVATE N_NIMCALL(void, eqdestroy__dS1BF3Vxjg9aJMmmhVJKSpQ)(NimStringV2* dest);
 N_NIMCALL(void, glfmGetDisplaySize)(void** display, int* width, int* height);
-N_NIMCALL(void, echoBinSafe)(NimStringDesc** args, NI argsLen_0);
+N_LIB_PRIVATE N_NIMCALL(void, eqsink__aBBXmHFBEivKqERloP6zmA)(NimStringV2* dest, NimStringV2 src);
+N_NIMCALL(NimStringV2, nimFloatToStr)(NF f);
+N_NIMCALL(void, echoBinSafe)(NimStringV2* args, NI argsLen_0);
+static N_INLINE(TFrame*, getFrame)(void);
+static N_INLINE(void, setFrame)(TFrame* s);
+N_NIMCALL(void, reraiseException)(void);
 N_LIB_PRIVATE N_NIMCALL(void, onFrame_nRz4ZOTW09c3A0QTqlLjn1g)(void** display, double frameTime);
 N_LIB_PRIVATE N_STDCALL(void, glClearColor_mRmvKpMRWVe0olxA2D6ibg)(NF32 red, NF32 green, NF32 blue, NF32 alpha);
 N_LIB_PRIVATE N_STDCALL(void, glClear_bP2CTzt9boHsiXofCPEwKlw)(NU32 mask);
-N_LIB_PRIVATE N_NIMCALL(NU32, compileShader_nayp9ceB4nTAT9a2FgcdT9aog)(NU32 type_0, NimStringDesc* shaderString);
+N_LIB_PRIVATE N_NIMCALL(NU32, compileShader_nayp9ceB4nTAT9a2FgcdT9aog)(NU32 type_0, NimStringV2 shaderString);
 N_LIB_PRIVATE N_STDCALL(NU32, glCreateShader_aJRhkMsONGw6YriVczeVXw)(NU32 type_0);
-static N_INLINE(NCSTRING, nimToCStringConv)(NimStringDesc* s);
+static N_INLINE(NCSTRING, nimToCStringConv)(NimStringV2 s);
 N_LIB_PRIVATE N_STDCALL(void, glShaderSource_aAChP39b9c74do2PBxq3lQ2w)(NU32 shader, NI32 count, NCSTRING* string, NI32* length);
 N_LIB_PRIVATE N_STDCALL(void, glCompileShader_JXarxWIUYZC38YQw9bzOQOQ)(NU32 shader);
 N_LIB_PRIVATE N_STDCALL(void, glGetShaderiv_7nfLUNau354MWYxYlFPRkQ)(NU32 shader, NU32 pname, NI32* params);
-N_NIMCALL(NimStringDesc*, copyString)(NimStringDesc* src);
-N_NIMCALL(NimStringDesc*, nimIntToStr)(NI x);
-N_NIMCALL(NimStringDesc*, rawNewString)(NI cap);
+N_NIMCALL(NimStringV2, nimIntToStr)(NI x);
+N_NIMCALL(NimStringV2, rawNewString)(NI cap);
 static N_INLINE(NI, chckRange)(NI i, NI a, NI b);
 N_NOINLINE(void, raiseRangeError)(NI64 val);
 N_LIB_PRIVATE N_STDCALL(void, glGetShaderInfoLog_P49ccOMvJ0UTL619cwd54DAw)(NU32 shader, NI32 bufSize, NI32* length, NCSTRING infoLog);
 N_LIB_PRIVATE N_STDCALL(void, glDeleteShader_JXarxWIUYZC38YQw9bzOQOQ_2)(NU32 shader);
+N_LIB_PRIVATE N_NIMCALL(void, eqdestroy__yJsHZJi5NyaV7IUe8n2jhA)(tySequence_4Xyxy0Om14N6K1l5e9bUPSQ* dest);
 N_LIB_PRIVATE N_STDCALL(NU32, glCreateProgram_5U6O7XOWiz3Kro2j6K7fHg)(void);
 N_LIB_PRIVATE N_STDCALL(void, glAttachShader_59cx9cQog6uHwSy9cvdhQccbw)(NU32 program, NU32 shader);
 N_LIB_PRIVATE N_STDCALL(void, glBindAttribLocation_uRnkKx7xCCCMIm9bGBTjK9bw)(NU32 program, NU32 index, NCSTRING name);
@@ -132,13 +220,18 @@ N_LIB_PRIVATE N_STDCALL(void, glGenBuffers_aY0U7QWUPiGqN6yoXyh0iw)(NI32 n, NU32*
 N_LIB_PRIVATE N_STDCALL(void, glBindBuffer_WUKuVaNXamgrBpVZ9bAUV9cA)(NU32 target, NU32 buffer);
 N_LIB_PRIVATE N_STDCALL(void, glEnableVertexAttribArray_L4zGXkv7mX9cYBOWvb4Jlrg)(NU32 index);
 N_LIB_PRIVATE N_STDCALL(void, glVertexAttribPointer_vD9cW9bmh7DJKgusHwHNi9byw)(NU32 index, NI32 size, NU32 type_0, NIM_BOOL normalized, NI32 stride, void* pointer);
-static N_INLINE(void, nimCopyMem)(void* dest, void* source, NI size);
+N_LIB_PRIVATE N_NIMCALL(void, eqsink__yGF9atWloxI3sbCEvYfmYRg)(tySequence_4Xyxy0Om14N6K1l5e9bUPSQ* dest, tySequence_4Xyxy0Om14N6K1l5e9bUPSQ src);
+N_NIMCALL(void*, newSeqPayload)(NI cap, NI elemSize);
 N_LIB_PRIVATE N_STDCALL(void, glBufferData_VLz8e7mQdBq50nh4P9btjaA)(NU32 target, NI size, void* data, NU32 usage);
+N_NIMCALL(NI, mulInt)(NI a, NI b);
+N_NOINLINE(void, raiseIndexError2)(NI i, NI n);
 N_LIB_PRIVATE N_STDCALL(void, glDrawArrays_4aN8a5dpLSl7We9cWglkQeA)(NU32 mode, NI32 first, NI32 count);
 N_LIB_PRIVATE N_NIMCALL(void, onSurfaceDestroyed_E0JR0pa1d9akOk9bu33whmXg)(void** display);
 N_LIB_PRIVATE N_NIMCALL(void, onSurfaceCreated_fT1qrsV9c8l9b5cg8wJH9cAIw)(void** display, int width, int height);
 N_LIB_PRIVATE N_STDCALL(void, glViewport_d738gxwcyV6Jhkv9aL2fVlQ)(NI32 x, NI32 y, NI32 width, NI32 height);
 N_NIMCALL(tyEnum_GLFMRenderingAPI_89azhV1FN9ch7ehZMZbxus4Q, glfmGetRenderingAPI)(void** display);
+N_LIB_PRIVATE N_NIMCALL(void, stdlib_allocatorsDatInit000)(void);
+N_LIB_PRIVATE N_NIMCALL(void, stdlib_allocatorsInit000)(void);
 N_LIB_PRIVATE N_NIMCALL(void, systemDatInit000)(void);
 N_LIB_PRIVATE N_NIMCALL(void, systemInit000)(void);
 N_LIB_PRIVATE N_NIMCALL(void, opengl_openglDatInit000)(void);
@@ -151,79 +244,74 @@ extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_9, "touch", 5);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_8 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_9)}
+extern TSafePoint* excHandler_rqLlY5bs9atDw2OXYqJEn5g;
+extern TSafePoint* excHandler_rqLlY5bs9atDw2OXYqJEn5g;
+extern TSafePoint* excHandler_rqLlY5bs9atDw2OXYqJEn5g;
+extern TSafePoint* excHandler_rqLlY5bs9atDw2OXYqJEn5g;
+extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
+extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[5+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_9 = { 5, NIM_NIL, "touch" };
+static const NimStringV2 TM_zG6mA2D5kuOdfHNU9b6qlqQ_10 = {5, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_9};
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[1+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_11 = { 1, NIM_NIL, " " };
+static const NimStringV2 TM_zG6mA2D5kuOdfHNU9b6qlqQ_12 = {1, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_11};
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[7+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_15 = { 7, NIM_NIL, "onFrame" };
+NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_14 = {{7, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_15}}
 ;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_11, "onFrame", 7);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_10 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_11)}
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[5+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_17 = { 5, NIM_NIL, "setup" };
+NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_16 = {{5, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_17}}
 ;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_13, "setup", 5);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_12 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_13)}
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[17+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_20 = { 17, NIM_NIL, "glShaderSource..." };
+NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_19 = {{17, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_20}}
 ;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_15, "glShaderSource...", 17);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_14 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_15)}
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[18+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_22 = { 18, NIM_NIL, "glCompileShader..." };
+NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_21 = {{18, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_22}}
 ;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_17, "glCompileShader...", 18);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_16 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_17)}
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[29+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_24 = { 29, NIM_NIL, "So... Couldn\'t compile shader" };
+NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_23 = {{29, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_24}}
 ;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_19, "So... Couldn\'t compile shader", 29);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_18 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_19)}
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[32+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_26 = { 32, NIM_NIL, "glGetShaderiv GL_INFO_LOG_LENGTH" };
+NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_25 = {{32, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_26}}
 ;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_21, "glGetShaderiv GL_INFO_LOG_LENGTH", 32);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_20 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_21)}
-;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_22, "Log lengh ", 10);
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_23, "Shader log: ", 12);
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_24, "attribute highp vec3 a_position;\012attribute lowp vec3 a_color;\012\012"
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[10+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_27 = { 10, NIM_NIL, "Log lengh " };
+static const NimStringV2 TM_zG6mA2D5kuOdfHNU9b6qlqQ_28 = {10, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_27};
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[12+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_29 = { 12, NIM_NIL, "Shader log: " };
+static const NimStringV2 TM_zG6mA2D5kuOdfHNU9b6qlqQ_30 = {12, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_29};
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[171+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_31 = { 171, NIM_NIL, "attribute highp vec3 a_position;\012attribute lowp vec3 a_color;\012\012"
 "varying lowp vec3 v_color;\012\012void main() {\012    gl_Position = vec4"
-"(a_position, 1.0);\012    v_color = a_color;\012}\012", 171);
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_25, "varying lowp vec3 v_color;\012\012void main() {\012    gl_FragColor = ve"
-"c4(v_color, 1.0);\012}\012", 83);
-static NIM_CONST tyProc_l6Br0mXghIMqU7Ht2wXupA TM_zG6mA2D5kuOdfHNU9b6qlqQ_26 = {NIM_NIL,NIM_NIL};
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_28, "setup done", 10);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_27 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_28)}
-;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_30, "glUseProgram", 12);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_29 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_30)}
-;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_32, "glGenBuffers", 12);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_31 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_32)}
-;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_34, "glBindBuffer", 12);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_33 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_34)}
-;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_36, "vertices", 8);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_35 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_36)}
-;
-NIM_CONST tyArray_G3UmgAkY79bNxQUIZv9aDe9bw TM_zG6mA2D5kuOdfHNU9b6qlqQ_37 = {0.0,
-5.0000000000000000e-01,
-0.0,
-1.0000000000000000e+00,
-0.0,
-0.0,
--5.0000000000000000e-01,
--5.0000000000000000e-01,
-0.0,
-0.0,
-1.0000000000000000e+00,
-0.0,
-5.0000000000000000e-01,
--5.0000000000000000e-01,
-0.0,
-0.0,
-0.0,
-1.0000000000000000e+00}
-;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_39, "glBufferData", 12);
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_40, "72", 2);
-NIM_CONST tyArray_Re75IspeoxXy2oCZHwcRrA TM_zG6mA2D5kuOdfHNU9b6qlqQ_38 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_39),
-((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_40)}
-;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_42, "glDrawArrays", 12);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_41 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_42)}
-;
-STRING_LITERAL(TM_zG6mA2D5kuOdfHNU9b6qlqQ_44, "done onFrame", 12);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_43 = {((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_44)}
+"(a_position, 1.0);\012    v_color = a_color;\012}\012" };
+static const NimStringV2 TM_zG6mA2D5kuOdfHNU9b6qlqQ_32 = {171, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_31};
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[83+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_33 = { 83, NIM_NIL, "varying lowp vec3 v_color;\012\012void main() {\012    gl_FragColor = ve"
+"c4(v_color, 1.0);\012}\012" };
+static const NimStringV2 TM_zG6mA2D5kuOdfHNU9b6qlqQ_34 = {83, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_33};
+static NIM_CONST tyProc_l6Br0mXghIMqU7Ht2wXupA TM_zG6mA2D5kuOdfHNU9b6qlqQ_35 = {NIM_NIL,NIM_NIL};
+static const struct {
+  NI cap; void* allocator; NIM_CHAR data[10+1];
+} TM_zG6mA2D5kuOdfHNU9b6qlqQ_37 = { 10, NIM_NIL, "setup done" };
+NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_zG6mA2D5kuOdfHNU9b6qlqQ_36 = {{10, (NimStrPayload*)&TM_zG6mA2D5kuOdfHNU9b6qlqQ_37}}
 ;
 
 static N_INLINE(void, nimSetMem_JE6t4x7Z3v2iVz27Nx0MRAmemory)(void* a, int v, NI size) {
@@ -303,7 +391,6 @@ N_NIMCALL(void, glfmMain)(void** display) {
 }
 
 static N_INLINE(void, initStackBottomWith)(void* locals) {
-	nimGC_setStackBottom(locals);
 }
 
 static N_INLINE(void, minuseq__2gGQPdUypkoO8EiDQJwWdwsystem)(double* x, double y) {
@@ -329,42 +416,42 @@ N_LIB_PRIVATE N_NIMCALL(NIM_BOOL, onKey_uWY4nU4MQDfQof1Mqle7QA)(void** display, 
 	NIM_BOOL handled;
 	nimfr_("onKey", "/p/glfm/examples/main.nim");
 {	result = (NIM_BOOL)0;
-	nimln_(72, "/p/glfm/examples/main.nim");
-	handled = NIM_FALSE;
 	nimln_(73, "/p/glfm/examples/main.nim");
+	handled = NIM_FALSE;
+	nimln_(74, "/p/glfm/examples/main.nim");
 	{
 		if (!(action == ((tyEnum_GLFMKeyAction_dF5XKgm9b7rwfeDcf1UydiA) 0))) goto LA3_;
-		nimln_(75, "/p/glfm/examples/main.nim");
+		nimln_(76, "/p/glfm/examples/main.nim");
 		switch (keyCode) {
 		case ((tyEnum_GLFMKey_DYBF2avdaFQVSDz063lKrQ) 37):
 		{
-			nimln_(77, "/p/glfm/examples/main.nim");
-			minuseq__2gGQPdUypkoO8EiDQJwWdwsystem((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetX), 1.0000000000000001e-01);
 			nimln_(78, "/p/glfm/examples/main.nim");
+			minuseq__2gGQPdUypkoO8EiDQJwWdwsystem((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetX), 1.0000000000000001e-01);
+			nimln_(79, "/p/glfm/examples/main.nim");
 			handled = NIM_TRUE;
 		}
 		break;
 		case ((tyEnum_GLFMKey_DYBF2avdaFQVSDz063lKrQ) 39):
 		{
-			nimln_(80, "/p/glfm/examples/main.nim");
-			pluseq__2gGQPdUypkoO8EiDQJwWdw_2system((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetX), 1.0000000000000001e-01);
 			nimln_(81, "/p/glfm/examples/main.nim");
+			pluseq__2gGQPdUypkoO8EiDQJwWdw_2system((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetX), 1.0000000000000001e-01);
+			nimln_(82, "/p/glfm/examples/main.nim");
 			handled = NIM_TRUE;
 		}
 		break;
 		case ((tyEnum_GLFMKey_DYBF2avdaFQVSDz063lKrQ) 38):
 		{
-			nimln_(83, "/p/glfm/examples/main.nim");
-			minuseq__2gGQPdUypkoO8EiDQJwWdwsystem((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetY), 1.0000000000000001e-01);
 			nimln_(84, "/p/glfm/examples/main.nim");
+			minuseq__2gGQPdUypkoO8EiDQJwWdwsystem((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetY), 1.0000000000000001e-01);
+			nimln_(85, "/p/glfm/examples/main.nim");
 			handled = NIM_TRUE;
 		}
 		break;
 		case ((tyEnum_GLFMKey_DYBF2avdaFQVSDz063lKrQ) 40):
 		{
-			nimln_(86, "/p/glfm/examples/main.nim");
-			pluseq__2gGQPdUypkoO8EiDQJwWdw_2system((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetY), 1.0000000000000001e-01);
 			nimln_(87, "/p/glfm/examples/main.nim");
+			pluseq__2gGQPdUypkoO8EiDQJwWdw_2system((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetY), 1.0000000000000001e-01);
+			nimln_(88, "/p/glfm/examples/main.nim");
 			handled = NIM_TRUE;
 		}
 		break;
@@ -375,7 +462,7 @@ N_LIB_PRIVATE N_NIMCALL(NIM_BOOL, onKey_uWY4nU4MQDfQof1Mqle7QA)(void** display, 
 		}
 	}
 	LA3_: ;
-	nimln_(90, "/p/glfm/examples/main.nim");
+	nimln_(91, "/p/glfm/examples/main.nim");
 	result = handled;
 	goto BeforeRet_;
 	}BeforeRet_: ;
@@ -383,64 +470,131 @@ N_LIB_PRIVATE N_NIMCALL(NIM_BOOL, onKey_uWY4nU4MQDfQof1Mqle7QA)(void** display, 
 	return result;
 }
 
+static N_INLINE(void, pushSafePoint)(TSafePoint* s) {
+	(*s).hasRaiseAction = NIM_FALSE;
+	(*s).prev = excHandler_rqLlY5bs9atDw2OXYqJEn5g;
+	excHandler_rqLlY5bs9atDw2OXYqJEn5g = s;
+}
+
+static N_INLINE(void, popSafePoint)(void) {
+	excHandler_rqLlY5bs9atDw2OXYqJEn5g = (*excHandler_rqLlY5bs9atDw2OXYqJEn5g).prev;
+}
+
+static N_INLINE(TFrame*, getFrame)(void) {
+	TFrame* result;
+	result = (TFrame*)0;
+	result = framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
+	return result;
+}
+
+static N_INLINE(void, setFrame)(TFrame* s) {
+	framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw = s;
+}
+
 N_LIB_PRIVATE N_NIMCALL(NIM_BOOL, onTouch_6bNY2sUeizqXr9cS9aIO9aGzQ)(void** display, int touch, tyEnum_GLFMTouchPhase_GpIScK4l6I2acWGc9czJhrg phase, double x, double y) {
 	NIM_BOOL result;
+	NimStringV2 colontmpD_;
+	NimStringV2 colontmpD__2;
+	TSafePoint TM_zG6mA2D5kuOdfHNU9b6qlqQ_8;
+	TFrame* _nimCurFrame;
 	nimfr_("onTouch", "/p/glfm/examples/main.nim");
-{	result = (NIM_BOOL)0;
+{	_nimCurFrame = getFrame();
+	result = (NIM_BOOL)0;
+	colontmpD_.len = 0; colontmpD_.p = NIM_NIL;
+	colontmpD__2.len = 0; colontmpD__2.p = NIM_NIL;
 	nimln_(51, "/p/glfm/examples/main.nim");
-	{
-		if (!(phase == ((tyEnum_GLFMTouchPhase_GpIScK4l6I2acWGc9czJhrg) 0))) goto LA3_;
-		nimln_(52, "/p/glfm/examples/main.nim");
-		result = NIM_FALSE;
+	pushSafePoint(&TM_zG6mA2D5kuOdfHNU9b6qlqQ_8);
+	TM_zG6mA2D5kuOdfHNU9b6qlqQ_8.status = setjmp(TM_zG6mA2D5kuOdfHNU9b6qlqQ_8.context);
+	if (TM_zG6mA2D5kuOdfHNU9b6qlqQ_8.status == 0) {
+		{
+			if (!(phase == ((tyEnum_GLFMTouchPhase_GpIScK4l6I2acWGc9czJhrg) 0))) goto LA4_;
+			nimln_(52, "/p/glfm/examples/main.nim");
+			result = NIM_FALSE;
+			popSafePoint();
+			nimln_(34, "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/syst"
+"em/fatal.nim");
+			eqdestroy__dS1BF3Vxjg9aJMmmhVJKSpQ((&colontmpD__2));
+			eqdestroy__dS1BF3Vxjg9aJMmmhVJKSpQ((&colontmpD_));
+			goto BeforeRet_;
+		}
+		LA4_: ;
+		nimln_(54, "/p/glfm/examples/main.nim");
+		{
+			int width;
+			int height;
+			tyArray_sMpvt1sOxOJ3LFGulnbeMQ T10_;
+			NimStringV2 T11_;
+			NimStringV2 T12_;
+			if (!!((phase == ((tyEnum_GLFMTouchPhase_GpIScK4l6I2acWGc9czJhrg) 1)))) goto LA8_;
+			width = (int)0;
+			height = (int)0;
+			nimln_(58, "/p/glfm/examples/main.nim");
+			glfmGetDisplaySize(display, (&width), (&height));
+			nimln_(60, "/p/glfm/examples/main.nim");
+			pluseq__2gGQPdUypkoO8EiDQJwWdw_2system((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetX), ((NF)(((NF)(2.0000000000000000e+00) * (NF)(((NF)(x) - (NF)(app_M2vMrSonZ7OWYIO9cEHfowg.lastTouchX))))) / (NF)(((NF) (width)))));
+			nimln_(62, "/p/glfm/examples/main.nim");
+			minuseq__2gGQPdUypkoO8EiDQJwWdwsystem((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetY), ((NF)(((NF)(2.0000000000000000e+00) * (NF)(((NF)(y) - (NF)(app_M2vMrSonZ7OWYIO9cEHfowg.lastTouchY))))) / (NF)(((NF) (height)))));
+			nimln_(64, "/p/glfm/examples/main.nim");
+			T10_[0] = TM_zG6mA2D5kuOdfHNU9b6qlqQ_10;
+			nimln_(34, "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/syst"
+"em/fatal.nim");
+			nimln_(64, "/p/glfm/examples/main.nim");
+			T11_.len = 0; T11_.p = NIM_NIL;
+			T11_ = nimFloatToStr(app_M2vMrSonZ7OWYIO9cEHfowg.offsetX);
+			nimln_(34, "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/syst"
+"em/fatal.nim");
+			eqsink__aBBXmHFBEivKqERloP6zmA((&colontmpD_), T11_);
+			T10_[1] = colontmpD_;
+			T10_[2] = TM_zG6mA2D5kuOdfHNU9b6qlqQ_12;
+			nimln_(64, "/p/glfm/examples/main.nim");
+			T12_.len = 0; T12_.p = NIM_NIL;
+			T12_ = nimFloatToStr(app_M2vMrSonZ7OWYIO9cEHfowg.offsetY);
+			nimln_(34, "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/syst"
+"em/fatal.nim");
+			eqsink__aBBXmHFBEivKqERloP6zmA((&colontmpD__2), T12_);
+			T10_[3] = colontmpD__2;
+			echoBinSafe(T10_, 4);
+		}
+		LA8_: ;
+		nimln_(67, "/p/glfm/examples/main.nim");
+		app_M2vMrSonZ7OWYIO9cEHfowg.lastTouchX = x;
+		nimln_(68, "/p/glfm/examples/main.nim");
+		app_M2vMrSonZ7OWYIO9cEHfowg.lastTouchY = y;
+		nimln_(69, "/p/glfm/examples/main.nim");
+		result = NIM_TRUE;
+		popSafePoint();
+		nimln_(34, "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/syst"
+"em/fatal.nim");
+		eqdestroy__dS1BF3Vxjg9aJMmmhVJKSpQ((&colontmpD__2));
+		eqdestroy__dS1BF3Vxjg9aJMmmhVJKSpQ((&colontmpD_));
 		goto BeforeRet_;
+		popSafePoint();
 	}
-	LA3_: ;
-	nimln_(54, "/p/glfm/examples/main.nim");
+	else {
+		popSafePoint();
+		setFrame(_nimCurFrame);
+	}
 	{
-		int width;
-		int height;
-		if (!!((phase == ((tyEnum_GLFMTouchPhase_GpIScK4l6I2acWGc9czJhrg) 1)))) goto LA7_;
-		width = (int)0;
-		height = (int)0;
-		nimln_(58, "/p/glfm/examples/main.nim");
-		glfmGetDisplaySize(display, (&width), (&height));
-		nimln_(60, "/p/glfm/examples/main.nim");
-		pluseq__2gGQPdUypkoO8EiDQJwWdw_2system((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetX), ((NF)(((NF)(2.0000000000000000e+00) * (NF)(((NF)(x) - (NF)(app_M2vMrSonZ7OWYIO9cEHfowg.lastTouchX))))) / (NF)(((NF) (width)))));
-		nimln_(62, "/p/glfm/examples/main.nim");
-		minuseq__2gGQPdUypkoO8EiDQJwWdwsystem((&app_M2vMrSonZ7OWYIO9cEHfowg.offsetY), ((NF)(((NF)(2.0000000000000000e+00) * (NF)(((NF)(y) - (NF)(app_M2vMrSonZ7OWYIO9cEHfowg.lastTouchY))))) / (NF)(((NF) (height)))));
-		nimln_(64, "/p/glfm/examples/main.nim");
-		echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_8, 1);
+		eqdestroy__dS1BF3Vxjg9aJMmmhVJKSpQ((&colontmpD__2));
+		eqdestroy__dS1BF3Vxjg9aJMmmhVJKSpQ((&colontmpD_));
 	}
-	LA7_: ;
-	nimln_(66, "/p/glfm/examples/main.nim");
-	app_M2vMrSonZ7OWYIO9cEHfowg.lastTouchX = x;
-	nimln_(67, "/p/glfm/examples/main.nim");
-	app_M2vMrSonZ7OWYIO9cEHfowg.lastTouchY = y;
-	nimln_(68, "/p/glfm/examples/main.nim");
-	result = NIM_TRUE;
-	goto BeforeRet_;
+	if (TM_zG6mA2D5kuOdfHNU9b6qlqQ_8.status != 0) reraiseException();
 	}BeforeRet_: ;
 	popFrame();
 	return result;
 }
 
-static N_INLINE(NCSTRING, nimToCStringConv)(NimStringDesc* s) {
+static N_INLINE(NCSTRING, nimToCStringConv)(NimStringV2 s) {
 	NCSTRING result;
 	result = (NCSTRING)0;
 	{
-		NIM_BOOL T3_;
-		T3_ = (NIM_BOOL)0;
-		T3_ = (s == NIM_NIL);
-		if (T3_) goto LA4_;
-		T3_ = ((*s).Sup.len == ((NI) 0));
-		LA4_: ;
-		if (!T3_) goto LA5_;
+		if (!(s.len == ((NI) 0))) goto LA3_;
 		result = "";
 	}
 	goto LA1_;
-	LA5_: ;
+	LA3_: ;
 	{
-		result = ((NCSTRING) ((*s).data));
+		result = ((NCSTRING) ((*s.p).data));
 	}
 	LA1_: ;
 	return result;
@@ -470,189 +624,258 @@ static N_INLINE(NI, chckRange)(NI i, NI a, NI b) {
 	return result;
 }
 
-N_LIB_PRIVATE N_NIMCALL(NU32, compileShader_nayp9ceB4nTAT9a2FgcdT9aog)(NU32 type_0, NimStringDesc* shaderString) {
+N_LIB_PRIVATE N_NIMCALL(NU32, compileShader_nayp9ceB4nTAT9a2FgcdT9aog)(NU32 type_0, NimStringV2 shaderString) {
 	NU32 result;
-	NU32 shader;
-	tyArray_NmEsK2qSxmxyFA4fWeYieg shaderTextArr;
-	NI32 status;
+	NimStringV2 colontmpD_;
+	NimStringV2 log;
+	TSafePoint TM_zG6mA2D5kuOdfHNU9b6qlqQ_18;
+	TFrame* _nimCurFrame;
 	nimfr_("compileShader", "/p/glfm/examples/main.nim");
-{	result = (NU32)0;
-	nimln_(126, "/p/glfm/examples/main.nim");
-	shader = glCreateShader_aJRhkMsONGw6YriVczeVXw(type_0);
-	nimZeroMem((void*)shaderTextArr, sizeof(tyArray_NmEsK2qSxmxyFA4fWeYieg));
+{	_nimCurFrame = getFrame();
+	result = (NU32)0;
+	colontmpD_.len = 0; colontmpD_.p = NIM_NIL;
+	log.len = 0; log.p = NIM_NIL;
 	nimln_(127, "/p/glfm/examples/main.nim");
-	shaderTextArr[0] = nimToCStringConv(shaderString);
-	nimln_(128, "/p/glfm/examples/main.nim");
-	echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_14, 1);
-	nimln_(129, "/p/glfm/examples/main.nim");
-	glShaderSource_aAChP39b9c74do2PBxq3lQ2w(shader, ((NI32) 1), ((NCSTRING*) (shaderTextArr)), NIM_NIL);
-	nimln_(130, "/p/glfm/examples/main.nim");
-	echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_16, 1);
-	nimln_(131, "/p/glfm/examples/main.nim");
-	glCompileShader_JXarxWIUYZC38YQw9bzOQOQ(shader);
-	status = (NI32)0;
-	nimln_(136, "/p/glfm/examples/main.nim");
-	glGetShaderiv_7nfLUNau354MWYxYlFPRkQ(shader, ((NU32) 35713), (&status));
-	nimln_(137, "/p/glfm/examples/main.nim");
-	{
-		NI32 logLength;
-		tyArray_Re75IspeoxXy2oCZHwcRrA T5_;
-		if (!(status == ((NI32) 0))) goto LA3_;
+	pushSafePoint(&TM_zG6mA2D5kuOdfHNU9b6qlqQ_18);
+	TM_zG6mA2D5kuOdfHNU9b6qlqQ_18.status = setjmp(TM_zG6mA2D5kuOdfHNU9b6qlqQ_18.context);
+	if (TM_zG6mA2D5kuOdfHNU9b6qlqQ_18.status == 0) {
+		NU32 shader;
+		tyArray_NmEsK2qSxmxyFA4fWeYieg shaderTextArr;
+		NI32 status;
+		shader = glCreateShader_aJRhkMsONGw6YriVczeVXw(type_0);
+		nimZeroMem((void*)shaderTextArr, sizeof(tyArray_NmEsK2qSxmxyFA4fWeYieg));
+		nimln_(128, "/p/glfm/examples/main.nim");
+		shaderTextArr[0] = nimToCStringConv(shaderString);
+		nimln_(129, "/p/glfm/examples/main.nim");
+		echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_19, 1);
+		nimln_(130, "/p/glfm/examples/main.nim");
+		glShaderSource_aAChP39b9c74do2PBxq3lQ2w(shader, ((NI32) 1), ((NCSTRING*) (shaderTextArr)), NIM_NIL);
+		nimln_(131, "/p/glfm/examples/main.nim");
+		echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_21, 1);
+		nimln_(132, "/p/glfm/examples/main.nim");
+		glCompileShader_JXarxWIUYZC38YQw9bzOQOQ(shader);
+		status = (NI32)0;
+		nimln_(137, "/p/glfm/examples/main.nim");
+		glGetShaderiv_7nfLUNau354MWYxYlFPRkQ(shader, ((NU32) 35713), (&status));
 		nimln_(138, "/p/glfm/examples/main.nim");
-		echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_18, 1);
-		logLength = (NI32)0;
-		nimln_(140, "/p/glfm/examples/main.nim");
-		echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_20, 1);
-		nimln_(141, "/p/glfm/examples/main.nim");
-		glGetShaderiv_7nfLUNau354MWYxYlFPRkQ(shader, ((NU32) 35716), (&logLength));
-		nimln_(142, "/p/glfm/examples/main.nim");
-		nimZeroMem((void*)T5_, sizeof(tyArray_Re75IspeoxXy2oCZHwcRrA));
-		T5_[0] = copyString(((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_22));
-		T5_[1] = nimIntToStr(((NI) (logLength)));
-		echoBinSafe(T5_, 2);
-		nimln_(143, "/p/glfm/examples/main.nim");
 		{
-			NimStringDesc* log;
-			tyArray_Re75IspeoxXy2oCZHwcRrA T10_;
-			if (!(((NI32) 0) < logLength)) goto LA8_;
+			NI32 logLength;
+			tyArray_Re75IspeoxXy2oCZHwcRrA T6_;
+			NimStringV2 T7_;
+			if (!(status == ((NI32) 0))) goto LA4_;
+			nimln_(139, "/p/glfm/examples/main.nim");
+			echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_23, 1);
+			logLength = (NI32)0;
+			nimln_(141, "/p/glfm/examples/main.nim");
+			echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_25, 1);
+			nimln_(142, "/p/glfm/examples/main.nim");
+			glGetShaderiv_7nfLUNau354MWYxYlFPRkQ(shader, ((NU32) 35716), (&logLength));
+			nimln_(143, "/p/glfm/examples/main.nim");
+			T6_[0] = TM_zG6mA2D5kuOdfHNU9b6qlqQ_28;
+			nimln_(34, "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/syst"
+"em/fatal.nim");
+			nimln_(143, "/p/glfm/examples/main.nim");
+			T7_.len = 0; T7_.p = NIM_NIL;
+			T7_ = nimIntToStr(((NI) (logLength)));
+			nimln_(34, "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/syst"
+"em/fatal.nim");
+			eqsink__aBBXmHFBEivKqERloP6zmA((&colontmpD_), T7_);
+			T6_[1] = colontmpD_;
+			echoBinSafe(T6_, 2);
 			nimln_(144, "/p/glfm/examples/main.nim");
-			log = rawNewString(((NI)chckRange(logLength, ((NI) 0), ((NI) 2147483647))));
-			nimln_(145, "/p/glfm/examples/main.nim");
-			glGetShaderInfoLog_P49ccOMvJ0UTL619cwd54DAw(shader, logLength, (&logLength), nimToCStringConv(log));
-			nimln_(146, "/p/glfm/examples/main.nim");
-			nimZeroMem((void*)T10_, sizeof(tyArray_Re75IspeoxXy2oCZHwcRrA));
-			T10_[0] = copyString(((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_23));
-			T10_[1] = copyString(log);
-			echoBinSafe(T10_, 2);
+			{
+				NimStringV2 T12_;
+				tyArray_Re75IspeoxXy2oCZHwcRrA T13_;
+				if (!(((NI32) 0) < logLength)) goto LA10_;
+				nimln_(34, "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/syst"
+"em/fatal.nim");
+				nimln_(145, "/p/glfm/examples/main.nim");
+				T12_.len = 0; T12_.p = NIM_NIL;
+				T12_ = rawNewString(((NI)chckRange(logLength, ((NI) 0), ((NI) 2147483647))));
+				nimln_(34, "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/syst"
+"em/fatal.nim");
+				eqsink__aBBXmHFBEivKqERloP6zmA((&log), T12_);
+				nimln_(146, "/p/glfm/examples/main.nim");
+				glGetShaderInfoLog_P49ccOMvJ0UTL619cwd54DAw(shader, logLength, (&logLength), nimToCStringConv(log));
+				nimln_(147, "/p/glfm/examples/main.nim");
+				T13_[0] = TM_zG6mA2D5kuOdfHNU9b6qlqQ_30;
+				T13_[1] = log;
+				echoBinSafe(T13_, 2);
+			}
+			LA10_: ;
+			nimln_(148, "/p/glfm/examples/main.nim");
+			glDeleteShader_JXarxWIUYZC38YQw9bzOQOQ_2(shader);
+			nimln_(149, "/p/glfm/examples/main.nim");
+			shader = ((NU32) 0);
 		}
-		LA8_: ;
-		nimln_(147, "/p/glfm/examples/main.nim");
-		glDeleteShader_JXarxWIUYZC38YQw9bzOQOQ_2(shader);
-		nimln_(148, "/p/glfm/examples/main.nim");
-		shader = ((NU32) 0);
+		LA4_: ;
+		nimln_(150, "/p/glfm/examples/main.nim");
+		result = shader;
+		popSafePoint();
+		nimln_(34, "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/syst"
+"em/fatal.nim");
+		eqdestroy__dS1BF3Vxjg9aJMmmhVJKSpQ((&log));
+		eqdestroy__dS1BF3Vxjg9aJMmmhVJKSpQ((&colontmpD_));
+		goto BeforeRet_;
+		popSafePoint();
 	}
-	LA3_: ;
-	nimln_(149, "/p/glfm/examples/main.nim");
-	result = shader;
-	goto BeforeRet_;
+	else {
+		popSafePoint();
+		setFrame(_nimCurFrame);
+	}
+	{
+		eqdestroy__dS1BF3Vxjg9aJMmmhVJKSpQ((&log));
+		eqdestroy__dS1BF3Vxjg9aJMmmhVJKSpQ((&colontmpD_));
+	}
+	if (TM_zG6mA2D5kuOdfHNU9b6qlqQ_18.status != 0) reraiseException();
 	}BeforeRet_: ;
 	popFrame();
 	return result;
 }
 
-static N_INLINE(void, nimCopyMem)(void* dest, void* source, NI size) {
-	void* T1_;
-	T1_ = (void*)0;
-	T1_ = memcpy(dest, source, ((size_t) (size)));
-}
-
 N_LIB_PRIVATE N_NIMCALL(void, onFrame_nRz4ZOTW09c3A0QTqlLjn1g)(void** display, double frameTime) {
-	NI32 stride;
-	tyArray_G3UmgAkY79bNxQUIZv9aDe9bw vertices;
+	tySequence_4Xyxy0Om14N6K1l5e9bUPSQ vertices;
+	TSafePoint TM_zG6mA2D5kuOdfHNU9b6qlqQ_13;
+	TFrame* _nimCurFrame;
 	nimfr_("onFrame", "/p/glfm/examples/main.nim");
-{	nimln_(159, "/p/glfm/examples/main.nim");
-	echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_10, 1);
-	nimln_(161, "/p/glfm/examples/main.nim");
-	glClearColor_mRmvKpMRWVe0olxA2D6ibg(0.0, 0.0, 0.0, 1.0000000000000000e+00);
-	nimln_(162, "/p/glfm/examples/main.nim");
-	glClear_bP2CTzt9boHsiXofCPEwKlw(((NU32) 16384));
-	nimln_(164, "/p/glfm/examples/main.nim");
-	{
-		NU32 vertShader;
-		NU32 fragShader;
-		if (!(app_M2vMrSonZ7OWYIO9cEHfowg.program == ((NI) 0))) goto LA3_;
+{	_nimCurFrame = getFrame();
+	vertices.len = 0; vertices.p = NIM_NIL;
+	nimln_(160, "/p/glfm/examples/main.nim");
+	pushSafePoint(&TM_zG6mA2D5kuOdfHNU9b6qlqQ_13);
+	TM_zG6mA2D5kuOdfHNU9b6qlqQ_13.status = setjmp(TM_zG6mA2D5kuOdfHNU9b6qlqQ_13.context);
+	if (TM_zG6mA2D5kuOdfHNU9b6qlqQ_13.status == 0) {
+		NI32 stride;
+		tySequence_4Xyxy0Om14N6K1l5e9bUPSQ T16_;
+		NI T17_;
+		NI TM_zG6mA2D5kuOdfHNU9b6qlqQ_38;
+		echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_14, 1);
+		nimln_(162, "/p/glfm/examples/main.nim");
+		glClearColor_mRmvKpMRWVe0olxA2D6ibg(0.0, 0.0, 0.0, 1.0000000000000000e+00);
+		nimln_(163, "/p/glfm/examples/main.nim");
+		glClear_bP2CTzt9boHsiXofCPEwKlw(((NU32) 16384));
 		nimln_(165, "/p/glfm/examples/main.nim");
-		echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_12, 1);
-		nimln_(166, "/p/glfm/examples/main.nim");
-		vertShader = compileShader_nayp9ceB4nTAT9a2FgcdT9aog(((NU32) 35633), ((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_24));
-		nimln_(167, "/p/glfm/examples/main.nim");
-		fragShader = compileShader_nayp9ceB4nTAT9a2FgcdT9aog(((NU32) 35632), ((NimStringDesc*) &TM_zG6mA2D5kuOdfHNU9b6qlqQ_25));
-		nimln_(168, "/p/glfm/examples/main.nim");
 		{
-			NIM_BOOL T7_;
-			T7_ = (NIM_BOOL)0;
-			T7_ = (vertShader == ((NI) 0));
-			if (T7_) goto LA8_;
-			T7_ = (fragShader == ((NI) 0));
-			LA8_: ;
-			if (!T7_) goto LA9_;
+			NU32 vertShader;
+			NU32 fragShader;
+			if (!(app_M2vMrSonZ7OWYIO9cEHfowg.program == ((NI) 0))) goto LA4_;
+			nimln_(166, "/p/glfm/examples/main.nim");
+			echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_16, 1);
+			nimln_(167, "/p/glfm/examples/main.nim");
+			vertShader = compileShader_nayp9ceB4nTAT9a2FgcdT9aog(((NU32) 35633), TM_zG6mA2D5kuOdfHNU9b6qlqQ_32);
+			nimln_(168, "/p/glfm/examples/main.nim");
+			fragShader = compileShader_nayp9ceB4nTAT9a2FgcdT9aog(((NU32) 35632), TM_zG6mA2D5kuOdfHNU9b6qlqQ_34);
 			nimln_(169, "/p/glfm/examples/main.nim");
-			glfmSetMainLoopFunc(display, TM_zG6mA2D5kuOdfHNU9b6qlqQ_26);
-			nimln_(170, "/p/glfm/examples/main.nim");
-			goto BeforeRet_;
+			{
+				NIM_BOOL T8_;
+				T8_ = (NIM_BOOL)0;
+				T8_ = (vertShader == ((NI) 0));
+				if (T8_) goto LA9_;
+				T8_ = (fragShader == ((NI) 0));
+				LA9_: ;
+				if (!T8_) goto LA10_;
+				nimln_(170, "/p/glfm/examples/main.nim");
+				glfmSetMainLoopFunc(display, TM_zG6mA2D5kuOdfHNU9b6qlqQ_35);
+				nimln_(171, "/p/glfm/examples/main.nim");
+				popSafePoint();
+				nimln_(204, "/p/glfm/examples/main.nim");
+				eqdestroy__yJsHZJi5NyaV7IUe8n2jhA((&vertices));
+				goto BeforeRet_;
+			}
+			LA10_: ;
+			nimln_(172, "/p/glfm/examples/main.nim");
+			app_M2vMrSonZ7OWYIO9cEHfowg.program = glCreateProgram_5U6O7XOWiz3Kro2j6K7fHg();
+			nimln_(173, "/p/glfm/examples/main.nim");
+			glAttachShader_59cx9cQog6uHwSy9cvdhQccbw(app_M2vMrSonZ7OWYIO9cEHfowg.program, vertShader);
+			nimln_(174, "/p/glfm/examples/main.nim");
+			glAttachShader_59cx9cQog6uHwSy9cvdhQccbw(app_M2vMrSonZ7OWYIO9cEHfowg.program, fragShader);
+			nimln_(175, "/p/glfm/examples/main.nim");
+			glBindAttribLocation_uRnkKx7xCCCMIm9bGBTjK9bw(app_M2vMrSonZ7OWYIO9cEHfowg.program, ((NU32) 0), "a_position");
+			nimln_(176, "/p/glfm/examples/main.nim");
+			glBindAttribLocation_uRnkKx7xCCCMIm9bGBTjK9bw(app_M2vMrSonZ7OWYIO9cEHfowg.program, ((NU32) 1), "a_color");
+			nimln_(177, "/p/glfm/examples/main.nim");
+			glLinkProgram_VmBV9c0dEsSOFA4kB5FAiVw(app_M2vMrSonZ7OWYIO9cEHfowg.program);
+			nimln_(178, "/p/glfm/examples/main.nim");
+			glDeleteShader_JXarxWIUYZC38YQw9bzOQOQ_2(vertShader);
+			nimln_(179, "/p/glfm/examples/main.nim");
+			glDeleteShader_JXarxWIUYZC38YQw9bzOQOQ_2(fragShader);
+			nimln_(180, "/p/glfm/examples/main.nim");
+			echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_36, 1);
 		}
-		LA9_: ;
-		nimln_(171, "/p/glfm/examples/main.nim");
-		app_M2vMrSonZ7OWYIO9cEHfowg.program = glCreateProgram_5U6O7XOWiz3Kro2j6K7fHg();
-		nimln_(172, "/p/glfm/examples/main.nim");
-		glAttachShader_59cx9cQog6uHwSy9cvdhQccbw(app_M2vMrSonZ7OWYIO9cEHfowg.program, vertShader);
-		nimln_(173, "/p/glfm/examples/main.nim");
-		glAttachShader_59cx9cQog6uHwSy9cvdhQccbw(app_M2vMrSonZ7OWYIO9cEHfowg.program, fragShader);
-		nimln_(174, "/p/glfm/examples/main.nim");
-		glBindAttribLocation_uRnkKx7xCCCMIm9bGBTjK9bw(app_M2vMrSonZ7OWYIO9cEHfowg.program, ((NU32) 0), "a_position");
-		nimln_(175, "/p/glfm/examples/main.nim");
-		glBindAttribLocation_uRnkKx7xCCCMIm9bGBTjK9bw(app_M2vMrSonZ7OWYIO9cEHfowg.program, ((NU32) 1), "a_color");
-		nimln_(176, "/p/glfm/examples/main.nim");
-		glLinkProgram_VmBV9c0dEsSOFA4kB5FAiVw(app_M2vMrSonZ7OWYIO9cEHfowg.program);
-		nimln_(177, "/p/glfm/examples/main.nim");
-		glDeleteShader_JXarxWIUYZC38YQw9bzOQOQ_2(vertShader);
-		nimln_(178, "/p/glfm/examples/main.nim");
-		glDeleteShader_JXarxWIUYZC38YQw9bzOQOQ_2(fragShader);
-		nimln_(179, "/p/glfm/examples/main.nim");
-		echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_27, 1);
-	}
-	LA3_: ;
-	nimln_(181, "/p/glfm/examples/main.nim");
-	echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_29, 1);
-	nimln_(182, "/p/glfm/examples/main.nim");
-	glUseProgram_VmBV9c0dEsSOFA4kB5FAiVw_2(app_M2vMrSonZ7OWYIO9cEHfowg.program);
-	nimln_(183, "/p/glfm/examples/main.nim");
-	echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_31, 1);
-	nimln_(184, "/p/glfm/examples/main.nim");
-	{
-		if (!(app_M2vMrSonZ7OWYIO9cEHfowg.vertexBuffer == ((NI) 0))) goto LA13_;
+		LA4_: ;
+		nimln_(183, "/p/glfm/examples/main.nim");
+		glUseProgram_VmBV9c0dEsSOFA4kB5FAiVw_2(app_M2vMrSonZ7OWYIO9cEHfowg.program);
 		nimln_(185, "/p/glfm/examples/main.nim");
-		glGenBuffers_aY0U7QWUPiGqN6yoXyh0iw(((NI32) 1), (&app_M2vMrSonZ7OWYIO9cEHfowg.vertexBuffer));
+		{
+			if (!(app_M2vMrSonZ7OWYIO9cEHfowg.vertexBuffer == ((NI) 0))) goto LA14_;
+			nimln_(186, "/p/glfm/examples/main.nim");
+			glGenBuffers_aY0U7QWUPiGqN6yoXyh0iw(((NI32) 1), (&app_M2vMrSonZ7OWYIO9cEHfowg.vertexBuffer));
+		}
+		LA14_: ;
+		nimln_(188, "/p/glfm/examples/main.nim");
+		glBindBuffer_WUKuVaNXamgrBpVZ9bAUV9cA(((NU32) 34962), app_M2vMrSonZ7OWYIO9cEHfowg.vertexBuffer);
+		nimln_(189, "/p/glfm/examples/main.nim");
+		stride = ((NI32) 24);
+		nimln_(190, "/p/glfm/examples/main.nim");
+		glEnableVertexAttribArray_L4zGXkv7mX9cYBOWvb4Jlrg(((NU32) 0));
+		nimln_(191, "/p/glfm/examples/main.nim");
+		glVertexAttribPointer_vD9cW9bmh7DJKgusHwHNi9byw(((NU32) 0), ((NI32) 3), ((NU32) 5126), NIM_FALSE, stride, ((void*) (((NI) 0))));
+		nimln_(192, "/p/glfm/examples/main.nim");
+		glEnableVertexAttribArray_L4zGXkv7mX9cYBOWvb4Jlrg(((NU32) 1));
+		nimln_(193, "/p/glfm/examples/main.nim");
+		glVertexAttribPointer_vD9cW9bmh7DJKgusHwHNi9byw(((NU32) 1), ((NI32) 3), ((NU32) 5126), NIM_FALSE, stride, ((void*) (((NI) 12))));
+		nimln_(204, "/p/glfm/examples/main.nim");
+		T16_.len = 0; T16_.p = NIM_NIL;
+		T16_.len = 18; T16_.p = (tySequence_4Xyxy0Om14N6K1l5e9bUPSQ_Content*) newSeqPayload(18, sizeof(NF32));
+		nimln_(205, "/p/glfm/examples/main.nim");
+		T16_.p->data[0] = ((NF32)(((NF32) (app_M2vMrSonZ7OWYIO9cEHfowg.offsetX))) + (NF32)(0.0));
+		T16_.p->data[1] = ((NF32) (((NF)(((NF) (((NF32) (app_M2vMrSonZ7OWYIO9cEHfowg.offsetY))))) + (NF)(5.0000000000000000e-01))));
+		T16_.p->data[2] = 0.0;
+		T16_.p->data[3] = 1.0000000000000000e+00;
+		T16_.p->data[4] = 0.0;
+		T16_.p->data[5] = 0.0;
+		nimln_(206, "/p/glfm/examples/main.nim");
+		T16_.p->data[6] = ((NF32)(((NF32) (app_M2vMrSonZ7OWYIO9cEHfowg.offsetX))) - (NF32)(5.0000000000000000e-01));
+		T16_.p->data[7] = ((NF32) (((NF)(((NF) (((NF32) (app_M2vMrSonZ7OWYIO9cEHfowg.offsetY))))) - (NF)(5.0000000000000000e-01))));
+		T16_.p->data[8] = 0.0;
+		T16_.p->data[9] = 0.0;
+		T16_.p->data[10] = 1.0000000000000000e+00;
+		T16_.p->data[11] = 0.0;
+		nimln_(207, "/p/glfm/examples/main.nim");
+		T16_.p->data[12] = ((NF32)(((NF32) (app_M2vMrSonZ7OWYIO9cEHfowg.offsetX))) + (NF32)(5.0000000000000000e-01));
+		T16_.p->data[13] = ((NF32) (((NF)(((NF) (((NF32) (app_M2vMrSonZ7OWYIO9cEHfowg.offsetY))))) - (NF)(5.0000000000000000e-01))));
+		T16_.p->data[14] = 0.0;
+		T16_.p->data[15] = 0.0;
+		T16_.p->data[16] = 0.0;
+		T16_.p->data[17] = 1.0000000000000000e+00;
+		nimln_(204, "/p/glfm/examples/main.nim");
+		eqsink__yGF9atWloxI3sbCEvYfmYRg((&vertices), T16_);
+		nimln_(216, "/p/glfm/examples/main.nim");
+		T17_ = vertices.len;
+		TM_zG6mA2D5kuOdfHNU9b6qlqQ_38 = mulInt(T17_, ((NI) 4));
+		if ((NU)(((NI) 0)) >= (NU)vertices.len) raiseIndexError2(((NI) 0),vertices.len-1);
+		glBufferData_VLz8e7mQdBq50nh4P9btjaA(((NU32) 34962), (NI)(TM_zG6mA2D5kuOdfHNU9b6qlqQ_38), ((void*) ((&vertices.p->data[((NI) 0)]))), ((NU32) 35044));
+		nimln_(218, "/p/glfm/examples/main.nim");
+		glDrawArrays_4aN8a5dpLSl7We9cWglkQeA(((NU32) 4), ((NI32) 0), ((NI32) 3));
+		popSafePoint();
 	}
-	LA13_: ;
-	nimln_(186, "/p/glfm/examples/main.nim");
-	echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_33, 1);
-	nimln_(187, "/p/glfm/examples/main.nim");
-	glBindBuffer_WUKuVaNXamgrBpVZ9bAUV9cA(((NU32) 34962), app_M2vMrSonZ7OWYIO9cEHfowg.vertexBuffer);
-	nimln_(188, "/p/glfm/examples/main.nim");
-	stride = ((NI32) 24);
-	nimln_(189, "/p/glfm/examples/main.nim");
-	glEnableVertexAttribArray_L4zGXkv7mX9cYBOWvb4Jlrg(((NU32) 0));
-	nimln_(190, "/p/glfm/examples/main.nim");
-	glVertexAttribPointer_vD9cW9bmh7DJKgusHwHNi9byw(((NU32) 0), ((NI32) 3), ((NU32) 5126), NIM_FALSE, stride, ((void*) (((NI) 0))));
-	nimln_(191, "/p/glfm/examples/main.nim");
-	glEnableVertexAttribArray_L4zGXkv7mX9cYBOWvb4Jlrg(((NU32) 1));
-	nimln_(192, "/p/glfm/examples/main.nim");
-	glVertexAttribPointer_vD9cW9bmh7DJKgusHwHNi9byw(((NU32) 1), ((NI32) 3), ((NU32) 5126), NIM_FALSE, stride, ((void*) (((NI) 12))));
-	nimln_(200, "/p/glfm/examples/main.nim");
-	echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_35, 1);
-	nimZeroMem((void*)vertices, sizeof(tyArray_G3UmgAkY79bNxQUIZv9aDe9bw));
-	nimln_(205, "/p/glfm/examples/main.nim");
-	nimCopyMem((void*)vertices, (NIM_CONST void*)TM_zG6mA2D5kuOdfHNU9b6qlqQ_37, sizeof(tyArray_G3UmgAkY79bNxQUIZv9aDe9bw));
-	nimln_(210, "/p/glfm/examples/main.nim");
-	echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_38, 2);
-	nimln_(211, "/p/glfm/examples/main.nim");
-	glBufferData_VLz8e7mQdBq50nh4P9btjaA(((NU32) 34962), ((NI) 72), ((void*) ((&vertices[(((NI) 0))- 0]))), ((NU32) 35044));
-	nimln_(212, "/p/glfm/examples/main.nim");
-	echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_41, 1);
-	nimln_(213, "/p/glfm/examples/main.nim");
-	glDrawArrays_4aN8a5dpLSl7We9cWglkQeA(((NU32) 4), ((NI32) 0), ((NI32) 3));
-	nimln_(215, "/p/glfm/examples/main.nim");
-	echoBinSafe(TM_zG6mA2D5kuOdfHNU9b6qlqQ_43, 1);
+	else {
+		popSafePoint();
+		setFrame(_nimCurFrame);
+	}
+	{
+		nimln_(204, "/p/glfm/examples/main.nim");
+		eqdestroy__yJsHZJi5NyaV7IUe8n2jhA((&vertices));
+	}
+	if (TM_zG6mA2D5kuOdfHNU9b6qlqQ_13.status != 0) reraiseException();
 	}BeforeRet_: ;
 	popFrame();
 }
 
 N_LIB_PRIVATE N_NIMCALL(void, onSurfaceDestroyed_E0JR0pa1d9akOk9bu33whmXg)(void** display) {
 	nimfr_("onSurfaceDestroyed", "/p/glfm/examples/main.nim");
-	nimln_(103, "/p/glfm/examples/main.nim");
-	app_M2vMrSonZ7OWYIO9cEHfowg.program = ((NU32) 0);
 	nimln_(104, "/p/glfm/examples/main.nim");
+	app_M2vMrSonZ7OWYIO9cEHfowg.program = ((NU32) 0);
+	nimln_(105, "/p/glfm/examples/main.nim");
 	app_M2vMrSonZ7OWYIO9cEHfowg.vertexBuffer = ((NU32) 0);
 	popFrame();
 }
@@ -660,14 +883,15 @@ N_LIB_PRIVATE N_NIMCALL(void, onSurfaceDestroyed_E0JR0pa1d9akOk9bu33whmXg)(void*
 N_LIB_PRIVATE N_NIMCALL(void, onSurfaceCreated_fT1qrsV9c8l9b5cg8wJH9cAIw)(void** display, int width, int height) {
 	tyEnum_GLFMRenderingAPI_89azhV1FN9ch7ehZMZbxus4Q api;
 	nimfr_("onSurfaceCreated", "/p/glfm/examples/main.nim");
-	nimln_(93, "/p/glfm/examples/main.nim");
-	glViewport_d738gxwcyV6Jhkv9aL2fVlQ(((NI32) 0), ((NI32) 0), width, height);
 	nimln_(94, "/p/glfm/examples/main.nim");
+	glViewport_d738gxwcyV6Jhkv9aL2fVlQ(((NI32) 0), ((NI32) 0), width, height);
+	nimln_(95, "/p/glfm/examples/main.nim");
 	api = glfmGetRenderingAPI(display);
 	popFrame();
 }
 
 void PreMainInner(void) {
+	stdlib_allocatorsInit000();
 	opengl_openglInit000();
 }
 
@@ -677,6 +901,7 @@ char** gEnv;
 void PreMain(void) {
 	void (*volatile inner)(void);
 	inner = PreMainInner;
+	stdlib_allocatorsDatInit000();
 	systemDatInit000();
 	initStackBottomWith((void *)&inner);
 	systemInit000();

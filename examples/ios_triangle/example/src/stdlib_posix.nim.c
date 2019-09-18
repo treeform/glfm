@@ -28,49 +28,47 @@
   #  define nimln_(n, file) \
       FR_.line = n; FR_.filename = file;
   static N_INLINE(void, nimFrame)(TFrame* s);
-N_LIB_PRIVATE N_NOINLINE(void, callDepthLimitReached_mMRdr4sgmnykA9aWeM9aDZlw)(void);
+N_LIB_PRIVATE N_NOINLINE(void, callDepthLimitReached__mMRdr4sgmnykA9aWeM9aDZlw)(void);
 static N_INLINE(void, popFrame)(void);
-int MAP_POPULATE_VA0iC4AP6fJAacff09cx89ag;
-extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
-extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
-extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
-extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
-extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
-extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
+int MAP_POPULATE__VA0iC4AP6fJAacff09cx89ag;
+extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
+extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
+extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
+extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
+extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
+extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
 
 static N_INLINE(void, nimFrame)(TFrame* s) {
 	NI T1_;
 	T1_ = (NI)0;
 	{
-		if (!(framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw == NIM_NIL)) goto LA4_;
+		if (!(framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw == NIM_NIL)) goto LA4_;
 		T1_ = ((NI) 0);
 	}
 	goto LA2_;
 	LA4_: ;
 	{
-		T1_ = ((NI) ((NI16)((*framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw).calldepth + ((NI16) 1))));
+		T1_ = ((NI) ((NI16)((*framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw).calldepth + ((NI16) 1))));
 	}
 	LA2_: ;
 	(*s).calldepth = ((NI16) (T1_));
-	(*s).prev = framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
-	framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw = s;
+	(*s).prev = framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
+	framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw = s;
 	{
 		if (!((*s).calldepth == ((NI16) (((NI) 2000))))) goto LA9_;
-		callDepthLimitReached_mMRdr4sgmnykA9aWeM9aDZlw();
+		callDepthLimitReached__mMRdr4sgmnykA9aWeM9aDZlw();
 	}
 	LA9_: ;
 }
 
 static N_INLINE(void, popFrame)(void) {
-	framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw = (*framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw).prev;
+	framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw = (*framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw).prev;
 }
 N_LIB_PRIVATE N_NIMCALL(void, stdlib_posixInit000)(void) {
 {
-	nimfr_("posix", "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/posi"
-"x/posix.nim");
-	nimln_(538, "/Users/andre.vonhouck/.choosenim/toolchains/nim-#devel/lib/posi"
-"x/posix_macos_amd64.nim");
-	MAP_POPULATE_VA0iC4AP6fJAacff09cx89ag = ((int) 0);
+	nimfr_("posix", "/p/Nim/lib/posix/posix.nim");
+	nimln_(553, "/p/Nim/lib/posix/posix_other.nim");
+	MAP_POPULATE__VA0iC4AP6fJAacff09cx89ag = ((int) 0);
 	popFrame();
 }
 }

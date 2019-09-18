@@ -24,13 +24,22 @@
 
 /* Begin PBXBuildFile section */
 		0F43EA882F4841C6BE561EC4 /* glfm_platform_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBCBC38BF944AC48CFBC59E /* glfm_platform_ios.m */; };
-		14A5436E1CE049FDB0D86618 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 42862F31A1ED4E69B6A3D933 /* main.c */; };
 		1F559AABD95E424DB220E8D7 /* texture.vert in Resources */ = {isa = PBXBuildFile; fileRef = 81BEAA3122204D53B6DA77CE /* texture.vert */; };
 		4D44A3579B8448899A932049 /* simple.frag in Resources */ = {isa = PBXBuildFile; fileRef = 64535C06EB984B6DA83301E1 /* simple.frag */; };
 		7CCCB5317B524EC895FD8F47 /* simple.vert in Resources */ = {isa = PBXBuildFile; fileRef = 3F97A8B0DF734BBBBFAEE017 /* simple.vert */; };
-		852858A72307047F00B92916 /* stdlib_io.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8528589B2307044200B92916 /* stdlib_io.nim.c */; };
-		852858A82307048600B92916 /* stdlib_system.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8528589C2307044200B92916 /* stdlib_system.nim.c */; };
-		852858A9230704A300B92916 /* _7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852858A32307044200B92916 /* _7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c */; };
+		852791572331AAA300885FC8 /* stdlib_assertions.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791562331AAA200885FC8 /* stdlib_assertions.nim.c */; };
+		852791592331AAAD00885FC8 /* stdlib_os.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791582331AAAD00885FC8 /* stdlib_os.nim.c */; };
+		854599CB233161D80021BE5A /* @mmain.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 854599C5233161D80021BE5A /* @mmain.nim.c */; };
+		854599CC233161D80021BE5A /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 854599C6233161D80021BE5A /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */; };
+		854599CD233161D80021BE5A /* stdlib_io.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 854599C7233161D80021BE5A /* stdlib_io.nim.c */; };
+		854599CE233161D80021BE5A /* stdlib_system.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 854599C9233161D80021BE5A /* stdlib_system.nim.c */; };
+		854599D2233167230021BE5A /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 854599D1233167220021BE5A /* data.txt */; };
+		854599D4233175250021BE5A /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 854599D3233175240021BE5A /* icons */; };
+		854599D72331AA570021BE5A /* stdlib_allocators.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 854599D52331AA560021BE5A /* stdlib_allocators.nim.c */; };
+		854599D82331AA570021BE5A /* stdlib_times.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 854599D62331AA560021BE5A /* stdlib_times.nim.c */; };
+		854599DC2331AA5F0021BE5A /* stdlib_pathnorm.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 854599D92331AA5F0021BE5A /* stdlib_pathnorm.nim.c */; };
+		854599DD2331AA5F0021BE5A /* stdlib_posix.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 854599DA2331AA5F0021BE5A /* stdlib_posix.nim.c */; };
+		854599DE2331AA5F0021BE5A /* stdlib_strutils.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 854599DB2331AA5F0021BE5A /* stdlib_strutils.nim.c */; };
 		FE4E066C617847FEBAC2D27C /* texture.frag in Resources */ = {isa = PBXBuildFile; fileRef = E30D3E0CFB194F94976D7EA1 /* texture.frag */; };
 /* End PBXBuildFile section */
 
@@ -60,22 +69,27 @@
 
 /* Begin PBXFileReference section */
 		3F97A8B0DF734BBBBFAEE017 /* simple.vert */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = simple.vert; path = example/assets/simple.vert; sourceTree = SOURCE_ROOT; };
-		42862F31A1ED4E69B6A3D933 /* main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = main.c; path = example/src/main.c; sourceTree = SOURCE_ROOT; };
 		63DDF5BBE27A4C21BFDE1DDB /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = example/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 		64535C06EB984B6DA83301E1 /* simple.frag */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = simple.frag; path = example/assets/simple.frag; sourceTree = SOURCE_ROOT; };
 		6724E6FAB9A945D7A57C8793 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = build/ios/example/CMakeFiles/glfm_example.dir/Info.plist; sourceTree = SOURCE_ROOT; };
 		6FBCBC38BF944AC48CFBC59E /* glfm_platform_ios.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = glfm_platform_ios.m; path = src/glfm_platform_ios.m; sourceTree = SOURCE_ROOT; };
 		76ADD21CE4CA4C54A6FC9A41 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 		81BEAA3122204D53B6DA77CE /* texture.vert */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = texture.vert; path = example/assets/texture.vert; sourceTree = SOURCE_ROOT; };
-		8528589B2307044200B92916 /* stdlib_io.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_io.nim.c; path = example/src/stdlib_io.nim.c; sourceTree = "<group>"; };
-		8528589C2307044200B92916 /* stdlib_system.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_system.nim.c; path = example/src/stdlib_system.nim.c; sourceTree = "<group>"; };
-		8528589E2307044200B92916 /* nimbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nimbase.h; path = example/src/nimbase.h; sourceTree = "<group>"; };
-		8528589F2307044200B92916 /* glfm.nim */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = glfm.nim; path = example/src/glfm.nim; sourceTree = "<group>"; };
-		852858A02307044200B92916 /* originalmain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = originalmain.c; path = example/src/originalmain.c; sourceTree = "<group>"; };
-		852858A22307044200B92916 /* _7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = "_7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c.o"; path = "example/src/_7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c.o"; sourceTree = "<group>"; };
-		852858A32307044200B92916 /* _7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "_7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c"; path = "example/src/_7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c"; sourceTree = "<group>"; };
-		852858A42307044200B92916 /* main.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.nim.c; path = example/src/main.nim.c; sourceTree = "<group>"; };
-		852858A52307044200B92916 /* main.nim */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.nim; path = example/src/main.nim; sourceTree = "<group>"; };
+		852791562331AAA200885FC8 /* stdlib_assertions.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_assertions.nim.c; path = example/src/stdlib_assertions.nim.c; sourceTree = "<group>"; };
+		852791582331AAAD00885FC8 /* stdlib_os.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_os.nim.c; path = example/src/stdlib_os.nim.c; sourceTree = "<group>"; };
+		854599C3233161D70021BE5A /* nimbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nimbase.h; path = example/src/nimbase.h; sourceTree = "<group>"; };
+		854599C5233161D80021BE5A /* @mmain.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "@mmain.nim.c"; path = "example/src/@mmain.nim.c"; sourceTree = "<group>"; };
+		854599C6233161D80021BE5A /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "@m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c"; path = "example/src/@m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c"; sourceTree = "<group>"; };
+		854599C7233161D80021BE5A /* stdlib_io.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_io.nim.c; path = example/src/stdlib_io.nim.c; sourceTree = "<group>"; };
+		854599C8233161D80021BE5A /* file_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = file_compat.h; path = example/src/file_compat.h; sourceTree = "<group>"; };
+		854599C9233161D80021BE5A /* stdlib_system.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_system.nim.c; path = example/src/stdlib_system.nim.c; sourceTree = "<group>"; };
+		854599D1233167220021BE5A /* data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = data.txt; path = example/assets/data.txt; sourceTree = "<group>"; };
+		854599D3233175240021BE5A /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = example/assets/icons; sourceTree = "<group>"; };
+		854599D52331AA560021BE5A /* stdlib_allocators.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_allocators.nim.c; path = example/src/stdlib_allocators.nim.c; sourceTree = "<group>"; };
+		854599D62331AA560021BE5A /* stdlib_times.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_times.nim.c; path = example/src/stdlib_times.nim.c; sourceTree = "<group>"; };
+		854599D92331AA5F0021BE5A /* stdlib_pathnorm.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_pathnorm.nim.c; path = example/src/stdlib_pathnorm.nim.c; sourceTree = "<group>"; };
+		854599DA2331AA5F0021BE5A /* stdlib_posix.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_posix.nim.c; path = example/src/stdlib_posix.nim.c; sourceTree = "<group>"; };
+		854599DB2331AA5F0021BE5A /* stdlib_strutils.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_strutils.nim.c; path = example/src/stdlib_strutils.nim.c; sourceTree = "<group>"; };
 		D3906A263C7B4311AE540FB2 /* glfm_platform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfm_platform.h; path = src/glfm_platform.h; sourceTree = SOURCE_ROOT; };
 		E19821A5B714453D912187A7 /* glfm_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = glfm_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30D3E0CFB194F94976D7EA1 /* texture.frag */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = texture.frag; path = example/assets/texture.frag; sourceTree = SOURCE_ROOT; };
@@ -116,17 +130,19 @@
 		5527756E9FC84E2F88BEEA2B /* src */ = {
 			isa = PBXGroup;
 			children = (
-				852858A32307044200B92916 /* _7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c */,
-				852858A22307044200B92916 /* _7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c.o */,
-				8528589F2307044200B92916 /* glfm.nim */,
-				852858A52307044200B92916 /* main.nim */,
-				852858A42307044200B92916 /* main.nim.c */,
-				8528589E2307044200B92916 /* nimbase.h */,
-				852858A02307044200B92916 /* originalmain.c */,
-				8528589B2307044200B92916 /* stdlib_io.nim.c */,
-				8528589C2307044200B92916 /* stdlib_system.nim.c */,
-				E5525626AB7D4627A7F1EF10 /* file_compat.h */,
-				42862F31A1ED4E69B6A3D933 /* main.c */,
+				854599C6233161D80021BE5A /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */,
+				854599C5233161D80021BE5A /* @mmain.nim.c */,
+				854599C8233161D80021BE5A /* file_compat.h */,
+				854599C3233161D70021BE5A /* nimbase.h */,
+				854599D52331AA560021BE5A /* stdlib_allocators.nim.c */,
+				852791562331AAA200885FC8 /* stdlib_assertions.nim.c */,
+				854599D92331AA5F0021BE5A /* stdlib_pathnorm.nim.c */,
+				854599DA2331AA5F0021BE5A /* stdlib_posix.nim.c */,
+				854599DB2331AA5F0021BE5A /* stdlib_strutils.nim.c */,
+				852791582331AAAD00885FC8 /* stdlib_os.nim.c */,
+				854599D62331AA560021BE5A /* stdlib_times.nim.c */,
+				854599C7233161D80021BE5A /* stdlib_io.nim.c */,
+				854599C9233161D80021BE5A /* stdlib_system.nim.c */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -137,6 +153,8 @@
 				5527756E9FC84E2F88BEEA2B /* src */,
 				0C40533369AB4BD6A39FB13F /* Resources */,
 				63DDF5BBE27A4C21BFDE1DDB /* CMakeLists.txt */,
+				854599D1233167220021BE5A /* data.txt */,
+				854599D3233175240021BE5A /* icons */,
 				64535C06EB984B6DA83301E1 /* simple.frag */,
 				3F97A8B0DF734BBBBFAEE017 /* simple.vert */,
 				E30D3E0CFB194F94976D7EA1 /* texture.frag */,
@@ -164,6 +182,7 @@
 		9F08ABE89EC94E0FAD7B8DC8 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				E5525626AB7D4627A7F1EF10 /* file_compat.h */,
 				E369317E9CDD412A8585572F /* glfm.h */,
 			);
 			name = include;
@@ -263,7 +282,9 @@
 				4D44A3579B8448899A932049 /* simple.frag in Resources */,
 				7CCCB5317B524EC895FD8F47 /* simple.vert in Resources */,
 				FE4E066C617847FEBAC2D27C /* texture.frag in Resources */,
+				854599D4233175250021BE5A /* icons in Resources */,
 				1F559AABD95E424DB220E8D7 /* texture.vert in Resources */,
+				854599D2233167230021BE5A /* data.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,10 +309,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				852858A9230704A300B92916 /* _7_7_7_7_7Users7andre.vonhouck7.nimble7pkgs7opengl-1.2.07opengl.nim.c in Sources */,
-				14A5436E1CE049FDB0D86618 /* main.c in Sources */,
-				852858A72307047F00B92916 /* stdlib_io.nim.c in Sources */,
-				852858A82307048600B92916 /* stdlib_system.nim.c in Sources */,
+				854599D82331AA570021BE5A /* stdlib_times.nim.c in Sources */,
+				854599DE2331AA5F0021BE5A /* stdlib_strutils.nim.c in Sources */,
+				854599CC233161D80021BE5A /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c in Sources */,
+				854599DC2331AA5F0021BE5A /* stdlib_pathnorm.nim.c in Sources */,
+				854599D72331AA570021BE5A /* stdlib_allocators.nim.c in Sources */,
+				854599CE233161D80021BE5A /* stdlib_system.nim.c in Sources */,
+				854599CD233161D80021BE5A /* stdlib_io.nim.c in Sources */,
+				854599CB233161D80021BE5A /* @mmain.nim.c in Sources */,
+				854599DD2331AA5F0021BE5A /* stdlib_posix.nim.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +325,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				852791592331AAAD00885FC8 /* stdlib_os.nim.c in Sources */,
+				852791572331AAA300885FC8 /* stdlib_assertions.nim.c in Sources */,
 				0F43EA882F4841C6BE561EC4 /* glfm_platform_ios.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

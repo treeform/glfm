@@ -2,13 +2,13 @@
  GLFM
  https://github.com/brackeen/glfm
  Copyright (c) 2014-2017 David Brackeen
- 
+
  This software is provided 'as-is', without any express or implied warranty.
  In no event will the authors be held liable for any damages arising from the
  use of this software. Permission is granted to anyone to use this software
  for any purpose, including commercial applications, and to alter it and
  redistribute it freely, subject to the following restrictions:
- 
+
  1. The origin of this software must not be misrepresented; you must not
     claim that you wrote the original software. If you use this software in a
     product, an acknowledgment in the product documentation would be appreciated
@@ -353,6 +353,10 @@ bool glfmIsKeyboardVisible(GLFMDisplay *display);
 /// Sets the function to call when the virtual keyboard changes visibility or changes bounds.
 void glfmSetKeyboardVisibilityChangedFunc(GLFMDisplay *display,
                                           GLFMKeyboardVisibilityChangedFunc visibilityChangedFunc);
+
+char* glfmHomeDir()
+char* glfmBundleDir()
+char* glfmReadFile(char* directory, char* name, char* ext)
 
 #if defined(GLFM_PLATFORM_ANDROID)
 

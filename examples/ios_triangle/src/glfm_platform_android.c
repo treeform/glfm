@@ -2,13 +2,13 @@
  GLFM
  https://github.com/brackeen/glfm
  Copyright (c) 2014-2019 David Brackeen
- 
+
  This software is provided 'as-is', without any express or implied warranty.
  In no event will the authors be held liable for any damages arising from the
  use of this software. Permission is granted to anyone to use this software
  for any purpose, including commercial applications, and to alter it and
  redistribute it freely, subject to the following restrictions:
- 
+
  1. The origin of this software must not be misrepresented; you must not
     claim that you wrote the original software. If you use this software in a
     product, an acknowledgment in the product documentation would be appreciated
@@ -23,6 +23,9 @@
 #ifdef GLFM_PLATFORM_ANDROID
 
 #include "android_native_app_glue.h"
+#include <android/asset_manager.h>
+#include <android/asset_manager_jni.h>
+
 #include "glfm_platform.h"
 #include <EGL/egl.h>
 #include <android/log.h>
@@ -486,7 +489,7 @@ static bool _glfmEGLContextInit(GLFMPlatformData *platformData) {
             EGLint minorVersion = 0;
             eglQueryContext(platformData->eglDisplay, platformData->eglContext,
                             EGL_CONTEXT_MAJOR_VERSION_KHR, &majorVersion);
-            if (majorVersion >= 3) { 
+            if (majorVersion >= 3) {
                 eglQueryContext(platformData->eglDisplay, platformData->eglContext,
                                 EGL_CONTEXT_MINOR_VERSION_KHR, &minorVersion);
             }
@@ -622,17 +625,17 @@ static bool _glfmEGLInit(GLFMPlatformData *platformData) {
 
     while (true) {
         const EGLint attribs[] = {
-            EGL_RENDERABLE_TYPE, EGL_OPENGL_ES2_BIT,
-            EGL_SURFACE_TYPE, EGL_WINDOW_BIT,
-            EGL_RED_SIZE, rBits,
-            EGL_GREEN_SIZE, gBits,
-            EGL_BLUE_SIZE, bBits,
-            EGL_ALPHA_SIZE, aBits,
-            EGL_DEPTH_SIZE, depthBits,
-            EGL_STENCIL_SIZE, stencilBits,
-            EGL_SAMPLE_BUFFERS, samples > 0 ? 1 : 0,
-            EGL_SAMPLES, samples > 0 ? samples : 0,
-            EGL_NONE};
+                EGL_RENDERABLE_TYPE, EGL_OPENGL_ES2_BIT,
+                EGL_SURFACE_TYPE, EGL_WINDOW_BIT,
+                EGL_RED_SIZE, rBits,
+                EGL_GREEN_SIZE, gBits,
+                EGL_BLUE_SIZE, bBits,
+                EGL_ALPHA_SIZE, aBits,
+                EGL_DEPTH_SIZE, depthBits,
+                EGL_STENCIL_SIZE, stencilBits,
+                EGL_SAMPLE_BUFFERS, samples > 0 ? 1 : 0,
+                EGL_SAMPLES, samples > 0 ? samples : 0,
+                EGL_NONE};
 
         eglChooseConfig(platformData->eglDisplay, attribs, &platformData->eglConfig, 1, &numConfigs);
         if (numConfigs) {
@@ -850,7 +853,7 @@ static void _glfmUpdateKeyboardVisibility(GLFMPlatformData *platformData) {
 
         // Send update notification
         if (platformData->keyboardVisible != keyboardVisible ||
-                !ARectsEqual(platformData->keyboardFrame, keyboardFrame)) {
+            !ARectsEqual(platformData->keyboardFrame, keyboardFrame)) {
             platformData->keyboardVisible = keyboardVisible;
             platformData->keyboardFrame = keyboardFrame;
             if (platformData->display->keyboardVisibilityChangedFunc) {
@@ -1072,9 +1075,9 @@ static int32_t _glfmOnInputEvent(struct android_app *app, AInputEvent *event) {
                         int32_t i;
                         for (i = AKeyEvent_getRepeatCount(event); i > 0; i--) {
                             handled |= platformData->display->keyFunc(platformData->display, key,
-                                                                GLFMKeyActionPressed, 0);
+                                                                      GLFMKeyActionPressed, 0);
                             handled |= platformData->display->keyFunc(platformData->display, key,
-                                                                GLFMKeyActionReleased, 0);
+                                                                      GLFMKeyActionReleased, 0);
                         }
                     }
                 }
@@ -1144,8 +1147,8 @@ static int32_t _glfmOnInputEvent(struct android_app *app, AInputEvent *event) {
                     }
                 } else {
                     const size_t index =
-                        (size_t)((action & AMOTION_EVENT_ACTION_POINTER_INDEX_MASK) >>
-                                 AMOTION_EVENT_ACTION_POINTER_INDEX_SHIFT);
+                            (size_t)((action & AMOTION_EVENT_ACTION_POINTER_INDEX_MASK) >>
+                                                                                        AMOTION_EVENT_ACTION_POINTER_INDEX_SHIFT);
                     const int touchNumber = AMotionEvent_getPointerId(event, index);
                     if (touchNumber >= 0 && touchNumber < maxTouches) {
                         double x = (double)AMotionEvent_getX(event, index);
@@ -1194,7 +1197,7 @@ void android_main(struct android_app *app) {
     const int ACONFIGURATION_DENSITY_ANY = 0xfffe; // Added in API 21
     const int32_t density = AConfiguration_getDensity(app->config);
     if (density == ACONFIGURATION_DENSITY_DEFAULT || density == ACONFIGURATION_DENSITY_NONE ||
-            density == ACONFIGURATION_DENSITY_ANY || density <= 0) {
+        density == ACONFIGURATION_DENSITY_ANY || density <= 0) {
         platformData->scale = 1.0;
     } else {
         platformData->scale = density / 160.0;
@@ -1243,10 +1246,10 @@ void android_main(struct android_app *app) {
                                                      Object);
             jclass clazz = (*jni)->GetObjectClass(jni, attributes);
             jfieldID layoutInDisplayCutoutMode = (*jni)->GetFieldID(jni, clazz,
-                    "layoutInDisplayCutoutMode", "I");
+                                                                    "layoutInDisplayCutoutMode", "I");
 
             (*jni)->SetIntField(jni, attributes, layoutInDisplayCutoutMode,
-                    LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES);
+                                LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES);
             (*jni)->DeleteLocalRef(jni, clazz);
             (*jni)->DeleteLocalRef(jni, attributes);
             (*jni)->DeleteLocalRef(jni, window);
@@ -1260,7 +1263,7 @@ void android_main(struct android_app *app) {
         struct android_poll_source *source;
 
         while ((eventIdentifier = ALooper_pollAll(platformData->animating ? 0 : -1, NULL, &events,
-                (void **)&source)) >= 0) {
+                                                  (void **)&source)) >= 0) {
             if (source) {
                 source->process(app, source);
             }
@@ -1355,7 +1358,7 @@ static bool _glfmGetSafeInsets(GLFMDisplay *display, double *top, double *right,
 }
 
 static bool _glfmGetSystemWindowInsets(GLFMDisplay *display, double *top, double *right, double *bottom,
-                               double *left) {
+                                       double *left) {
     GLFMPlatformData *platformData = (GLFMPlatformData *) display->platformData;
     const int SDK_INT = platformData->app->activity->sdkVersion;
     if (SDK_INT < 20) {
@@ -1479,5 +1482,42 @@ ANativeActivity *glfmAndroidGetActivity() {
         return NULL;
     }
 }
+
+char* glfmHomeDir() {
+    return getenv("HOME");
+}
+
+char* glfmBundleDir() {
+    // NSString* filePath = [NSBundle mainBundle].resourcePath;
+    // return filePath.UTF8String;
+    return NULL;
+}
+
+int glfmReadFileSize(char* filename) {
+    // Get size of file from packed assets
+    AAssetManager* mgr = platformDataGlobal->app->activity->assetManager;
+    AAsset *asset = AAssetManager_open(mgr, filename, AASSET_MODE_BUFFER);
+    return AAsset_getLength64(asset);
+}
+
+int glfmReadFileBuffer(char* filename, char* buffer) {
+    // Read in file from packed assets into a buffer
+    AAssetManager* mgr = platformDataGlobal->app->activity->assetManager;
+    AAsset *asset = AAssetManager_open(mgr, filename, AASSET_MODE_BUFFER);
+    off64_t fsize = AAsset_getLength64(asset);
+    AAsset_read(asset, buffer, fsize);
+    return fsize;
+}
+
+//char* glfmReadFile(char* filename) {
+//    AAssetManager* mgr = platformDataGlobal->app->activity->assetManager;
+//    AAsset *asset = AAssetManager_open(mgr, filename, AASSET_MODE_BUFFER);
+//    off64_t fsize = AAsset_getLength64(asset);
+//    // TODO figure out memory leak
+//    char *buffer = malloc(fsize + 1);
+//    AAsset_read(asset, buffer, fsize);
+//    return buffer;
+//}
+
 
 #endif

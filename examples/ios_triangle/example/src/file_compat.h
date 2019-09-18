@@ -125,7 +125,9 @@ static JNIEnv *_fc_jnienv(JavaVM *vm);
 #  include <string.h>
 #endif
 
+
 static int fc_resdir(char *path, size_t path_max) {
+    printf("in fc_resdir");
     if (!path || path_max == 0) {
         return -1;
     }
@@ -154,6 +156,7 @@ static int fc_resdir(char *path, size_t path_max) {
     path[0] = 0;
     return -1;
 #elif defined(__APPLE__)
+    printf("in __APPLE__");
     int result = -1;
     FC_AUTORELEASEPOOL_BEGIN
     CFBundleRef bundle = CFBundleGetMainBundle();
@@ -180,6 +183,7 @@ static int fc_resdir(char *path, size_t path_max) {
     if (result != 0) {
         path[0] = 0;
     }
+    printf("done __APPLE__");
     return result;
 #elif defined(__ANDROID__)
     path[0] = 0;
