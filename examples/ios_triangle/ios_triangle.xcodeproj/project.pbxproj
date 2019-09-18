@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85BC81482332880800E8E3D8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8527915B2332767D00885FC8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */; };
+		85BC81492332880A00E8E3D8 /* @mmain.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791612332767D00885FC8 /* @mmain.nim.c */; };
+		85BC814A2332881F00E8E3D8 /* glfm_platform_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 852791602332767D00885FC8 /* glfm_platform_ios.m */; };
+		85BC814B2332882300E8E3D8 /* stdlib_allocators.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8527915A2332767D00885FC8 /* stdlib_allocators.nim.c */; };
+		85BC814C2332882300E8E3D8 /* stdlib_assertions.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8527915C2332767D00885FC8 /* stdlib_assertions.nim.c */; };
+		85BC814D2332882300E8E3D8 /* stdlib_io.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791622332767D00885FC8 /* stdlib_io.nim.c */; };
+		85BC814E2332882300E8E3D8 /* stdlib_os.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8527915E2332767D00885FC8 /* stdlib_os.nim.c */; };
+		85BC814F2332882300E8E3D8 /* stdlib_pathnorm.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791692332767D00885FC8 /* stdlib_pathnorm.nim.c */; };
+		85BC81502332882300E8E3D8 /* stdlib_posix.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8527915D2332767D00885FC8 /* stdlib_posix.nim.c */; };
+		85BC81512332882300E8E3D8 /* stdlib_strutils.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791642332767D00885FC8 /* stdlib_strutils.nim.c */; };
+		85BC81522332882300E8E3D8 /* stdlib_system.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791672332767D00885FC8 /* stdlib_system.nim.c */; };
+		85BC81532332882300E8E3D8 /* stdlib_times.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791652332767D00885FC8 /* stdlib_times.nim.c */; };
+		85BC815E23328ED900E8E3D8 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 85BC815D23328ED900E8E3D8 /* assets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8527915A2332767D00885FC8 /* stdlib_allocators.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_allocators.nim.c; path = examples/ios_triangle/src/stdlib_allocators.nim.c; sourceTree = "<group>"; };
+		8527915B2332767D00885FC8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "@m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c"; path = "examples/ios_triangle/src/@m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c"; sourceTree = "<group>"; };
+		8527915C2332767D00885FC8 /* stdlib_assertions.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_assertions.nim.c; path = examples/ios_triangle/src/stdlib_assertions.nim.c; sourceTree = "<group>"; };
+		8527915D2332767D00885FC8 /* stdlib_posix.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_posix.nim.c; path = examples/ios_triangle/src/stdlib_posix.nim.c; sourceTree = "<group>"; };
+		8527915E2332767D00885FC8 /* stdlib_os.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_os.nim.c; path = examples/ios_triangle/src/stdlib_os.nim.c; sourceTree = "<group>"; };
+		8527915F2332767D00885FC8 /* nimbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nimbase.h; path = examples/ios_triangle/src/nimbase.h; sourceTree = "<group>"; };
+		852791602332767D00885FC8 /* glfm_platform_ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = glfm_platform_ios.m; path = examples/ios_triangle/src/glfm_platform_ios.m; sourceTree = "<group>"; };
+		852791612332767D00885FC8 /* @mmain.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "@mmain.nim.c"; path = "examples/ios_triangle/src/@mmain.nim.c"; sourceTree = "<group>"; };
+		852791622332767D00885FC8 /* stdlib_io.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_io.nim.c; path = examples/ios_triangle/src/stdlib_io.nim.c; sourceTree = "<group>"; };
+		852791632332767D00885FC8 /* glfm_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glfm_platform.h; path = examples/ios_triangle/src/glfm_platform.h; sourceTree = "<group>"; };
+		852791642332767D00885FC8 /* stdlib_strutils.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_strutils.nim.c; path = examples/ios_triangle/src/stdlib_strutils.nim.c; sourceTree = "<group>"; };
+		852791652332767D00885FC8 /* stdlib_times.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_times.nim.c; path = examples/ios_triangle/src/stdlib_times.nim.c; sourceTree = "<group>"; };
+		852791662332767D00885FC8 /* file_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = file_compat.h; path = examples/ios_triangle/src/file_compat.h; sourceTree = "<group>"; };
+		852791672332767D00885FC8 /* stdlib_system.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_system.nim.c; path = examples/ios_triangle/src/stdlib_system.nim.c; sourceTree = "<group>"; };
+		852791682332767D00885FC8 /* glfm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glfm.h; path = examples/ios_triangle/src/glfm.h; sourceTree = "<group>"; };
+		852791692332767D00885FC8 /* stdlib_pathnorm.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_pathnorm.nim.c; path = examples/ios_triangle/src/stdlib_pathnorm.nim.c; sourceTree = "<group>"; };
+		852791BF23327BA600885FC8 /* ios_triangle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_triangle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85BC815D23328ED900E8E3D8 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = examples/ios_triangle/assets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		5527756E9FC84E2F88BEEA2B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				8527915B2332767D00885FC8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */,
+				852791612332767D00885FC8 /* @mmain.nim.c */,
+				852791662332767D00885FC8 /* file_compat.h */,
+				852791602332767D00885FC8 /* glfm_platform_ios.m */,
+				852791632332767D00885FC8 /* glfm_platform.h */,
+				852791682332767D00885FC8 /* glfm.h */,
+				8527915F2332767D00885FC8 /* nimbase.h */,
+				8527915A2332767D00885FC8 /* stdlib_allocators.nim.c */,
+				8527915C2332767D00885FC8 /* stdlib_assertions.nim.c */,
+				852791622332767D00885FC8 /* stdlib_io.nim.c */,
+				8527915E2332767D00885FC8 /* stdlib_os.nim.c */,
+				852791692332767D00885FC8 /* stdlib_pathnorm.nim.c */,
+				8527915D2332767D00885FC8 /* stdlib_posix.nim.c */,
+				852791642332767D00885FC8 /* stdlib_strutils.nim.c */,
+				852791672332767D00885FC8 /* stdlib_system.nim.c */,
+				852791652332767D00885FC8 /* stdlib_times.nim.c */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		C552D03A278C4BAEA62884E5 = {
+			isa = PBXGroup;
+			children = (
+				85BC815D23328ED900E8E3D8 /* assets */,
+				5527756E9FC84E2F88BEEA2B /* src */,
+				852791BF23327BA600885FC8 /* ios_triangle.app */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B6783DED2EA4C8C96ECA375 /* ios_triangle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4769924177DC4BD58C136F8F /* Build configuration list for PBXNativeTarget "ios_triangle" */;
+			buildPhases = (
+				B9F2B36B47B94BB58F3C7446 /* Resources */,
+				696F94CCB8384CAFA29E202C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ios_triangle;
+			productName = glfm_example;
+			productReference = 852791BF23327BA600885FC8 /* ios_triangle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8845F1931CDE4316A3106764 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1030;
+				TargetAttributes = {
+					2B6783DED2EA4C8C96ECA375 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 8B7FE2F3E37B4A2CBF31237C /* Build configuration list for PBXProject "ios_triangle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C552D03A278C4BAEA62884E5;
+			productRefGroup = C552D03A278C4BAEA62884E5;
+			projectDirPath = ../../;
+			projectRoot = "";
+			targets = (
+				2B6783DED2EA4C8C96ECA375 /* ios_triangle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B9F2B36B47B94BB58F3C7446 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85BC815E23328ED900E8E3D8 /* assets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		696F94CCB8384CAFA29E202C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85BC81482332880800E8E3D8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c in Sources */,
+				85BC81512332882300E8E3D8 /* stdlib_strutils.nim.c in Sources */,
+				85BC814A2332881F00E8E3D8 /* glfm_platform_ios.m in Sources */,
+				85BC814F2332882300E8E3D8 /* stdlib_pathnorm.nim.c in Sources */,
+				85BC81532332882300E8E3D8 /* stdlib_times.nim.c in Sources */,
+				85BC814C2332882300E8E3D8 /* stdlib_assertions.nim.c in Sources */,
+				85BC814E2332882300E8E3D8 /* stdlib_os.nim.c in Sources */,
+				85BC81492332880A00E8E3D8 /* @mmain.nim.c in Sources */,
+				85BC814B2332882300E8E3D8 /* stdlib_allocators.nim.c in Sources */,
+				85BC81522332882300E8E3D8 /* stdlib_system.nim.c in Sources */,
+				85BC814D2332882300E8E3D8 /* stdlib_io.nim.c in Sources */,
+				85BC81502332882300E8E3D8 /* stdlib_posix.nim.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		08CCE23C4A4441C98EA13745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = /p/glfm/examples/ios_triangle/build;
+			};
+			name = Debug;
+		};
+		27B1E17E84FC49B7ADF19ECA /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = "";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = /p/glfm/examples/ios_triangle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = (
+					/p/try/glfm/build/ios/GLFM.build/lib/RelWithDebInfo/libglfm.a,
+					"-framework",
+					Foundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					UIKit,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glfm.iostriangle;
+				PRODUCT_NAME = ios_triangle;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator";
+				SYMROOT = /p/glfm/examples/ios_triangle/build;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				USE_HEADERMAP = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		2B81B7114B1C479CB756E77C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = "";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = /p/glfm/examples/ios_triangle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = (
+					/p/try/glfm/build/ios/GLFM.build/lib/Release/libglfm.a,
+					"-framework",
+					Foundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					UIKit,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glfm.iostriangle;
+				PRODUCT_NAME = ios_triangle;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator";
+				SYMROOT = /p/glfm/examples/ios_triangle/build;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				USE_HEADERMAP = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		AD017E7943214FF197D547AF /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = /p/glfm/examples/ios_triangle/build;
+			};
+			name = RelWithDebInfo;
+		};
+		ADF10EE5B2564178800174FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = "";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = /p/glfm/examples/ios_triangle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = (
+					/p/try/glfm/build/ios/GLFM.build/lib/Debug/libglfm.a,
+					"-framework",
+					Foundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					UIKit,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glfm.iostriangle;
+				PRODUCT_NAME = ios_triangle;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator";
+				SYMROOT = /p/glfm/examples/ios_triangle/build;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				USE_HEADERMAP = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		BC404160A94C42299AAD0904 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = "";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = /p/glfm/examples/ios_triangle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = (
+					/p/try/glfm/build/ios/GLFM.build/lib/MinSizeRel/libglfm.a,
+					"-framework",
+					Foundation,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					UIKit,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glfm.iostriangle;
+				PRODUCT_NAME = ios_triangle;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator";
+				SYMROOT = /p/glfm/examples/ios_triangle/build;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				USE_HEADERMAP = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		D5139E20231D47B1A18FB58F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = /p/glfm/examples/ios_triangle/build;
+			};
+			name = Release;
+		};
+		F958BA7751414313BE4637D2 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = /p/glfm/examples/ios_triangle/build;
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4769924177DC4BD58C136F8F /* Build configuration list for PBXNativeTarget "ios_triangle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADF10EE5B2564178800174FE /* Debug */,
+				2B81B7114B1C479CB756E77C /* Release */,
+				BC404160A94C42299AAD0904 /* MinSizeRel */,
+				27B1E17E84FC49B7ADF19ECA /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8B7FE2F3E37B4A2CBF31237C /* Build configuration list for PBXProject "ios_triangle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08CCE23C4A4441C98EA13745 /* Debug */,
+				D5139E20231D47B1A18FB58F /* Release */,
+				F958BA7751414313BE4637D2 /* MinSizeRel */,
+				AD017E7943214FF197D547AF /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8845F1931CDE4316A3106764 /* Project object */;
+}

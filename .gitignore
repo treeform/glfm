@@ -12,3 +12,4 @@ glfm
 
 examples/android_triangle/app/app.iml
 examples/android_triangle/app/build/
+examples/ios_triangle/build/

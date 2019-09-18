@@ -1509,15 +1509,4 @@ int glfmReadFileBuffer(char* filename, char* buffer) {
     return fsize;
 }
 
-//char* glfmReadFile(char* filename) {
-//    AAssetManager* mgr = platformDataGlobal->app->activity->assetManager;
-//    AAsset *asset = AAssetManager_open(mgr, filename, AASSET_MODE_BUFFER);
-//    off64_t fsize = AAsset_getLength64(asset);
-//    // TODO figure out memory leak
-//    char *buffer = malloc(fsize + 1);
-//    AAsset_read(asset, buffer, fsize);
-//    return buffer;
-//}
-
-
 #endif

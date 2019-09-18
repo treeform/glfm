@@ -1008,17 +1008,24 @@ char* glfmBundleDir() {
 }
 
 int glfmReadFileSize(char* filename) {
-    // Get size of file from packed assets
+    // Get size of file from packed assets or -1 on error.
     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@(filename)];
+    NSLog(filePath);
     FILE *f = fopen(filePath.UTF8String, "r");
+    if (f == nil){
+        return -1;
+    }
     fseek(f, 0, SEEK_END);
     return ftell(f);
 }
 
 int glfmReadFileBuffer(char* filename, char* buffer) {
-    // Read in file from packed assets into a buffer
+    // Read in file from packed assets into a buffer and returns size or -1 on error.
     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@(filename)];
     FILE *f = fopen(filePath.UTF8String, "r");
+    if (f == nil){
+        return -1;
+    }
     fseek(f, 0, SEEK_END);
     long fsize = ftell(f);
     fseek(f, 0, SEEK_SET);
@@ -1026,20 +1033,5 @@ int glfmReadFileBuffer(char* filename, char* buffer) {
     fclose(f);
     return fsize;
 }
-
-// char* glfmReadFile(char* filename) {
-//     // Read in file as a string
-//     //NSString* filePath = [[NSBundle mainBundle] pathForResource:@(name) ofType:@(ext) inDirectory:@(directory)];
-//     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@(filename)];
-//     FILE *f = fopen(filePath.UTF8String, "r");
-//     fseek(f, 0, SEEK_END);
-//     long fsize = ftell(f);
-//     fseek(f, 0, SEEK_SET);  /* same as rewind(f); */
-//     char *string = malloc(fsize + 1);
-//     fread(string, 1, fsize, f);
-//     fclose(f);
-//     string[fsize] = 0;
-//     return string;
-// }
 
 #endif

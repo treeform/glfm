@@ -150,9 +150,9 @@ proc compileShader*(`type`: GLenum; shaderString: string): GLuint =
 #   simpleFrag = staticRead("simple.frag")
 
 proc readAssetFile*(filename: string): string =
-  let size = int glfmReadFileSize(filename)
+  let size = int glfmReadFileSize("assets/" & filename)
   result = newString(size)
-  discard glfmReadFileBuffer(filename, result)
+  discard glfmReadFileBuffer("assets/" & filename, result)
 
 proc onFrame*(display: ptr GLFMDisplay; frameTime: cdouble) {.exportc.} =
   #var app: ptr ExampleApp = cast[ptr ExampleApp](glfmGetUserData(display))

@@ -1,5 +1,0 @@
-/p/try/glfm/build/ios/CMakeFiles/glfm.dir
-/p/try/glfm/build/ios/CMakeFiles/ALL_BUILD.dir
-/p/try/glfm/build/ios/CMakeFiles/ZERO_CHECK.dir
-/p/try/glfm/build/ios/example/CMakeFiles/glfm_test_pattern.dir
-/p/try/glfm/build/ios/example/CMakeFiles/glfm_example.dir
