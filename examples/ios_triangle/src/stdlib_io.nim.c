@@ -4,7 +4,6 @@
 #define NIM_INTBITS 64
 
 #include "nimbase.h"
-#include <setjmp.h>
 #include <stdio.h>
 #undef LANGUAGE_C
 #undef MIPSEB
@@ -29,104 +28,23 @@
 
   #  define nimln_(n, file) \
       FR_.line = n; FR_.filename = file;
-  typedef struct NimStrPayload NimStrPayload;
-typedef struct AllocatorObj AllocatorObj;
-typedef struct NimStringV2 NimStringV2;
-typedef struct Exception Exception;
-typedef struct RootObj RootObj;
-typedef struct TNimType TNimType;
-typedef struct tySequence__uB9b75OUPRENsBAu4AnoePA tySequence__uB9b75OUPRENsBAu4AnoePA;
-typedef struct tySequence__uB9b75OUPRENsBAu4AnoePA_Content tySequence__uB9b75OUPRENsBAu4AnoePA_Content;
-typedef struct TSafePoint TSafePoint;
-typedef struct tyObject_StackTraceEntry__oLyohQ7O2XOvGnflOss8EA tyObject_StackTraceEntry__oLyohQ7O2XOvGnflOss8EA;
-struct NimStrPayload {
-NI cap;
-AllocatorObj* allocator;
+  typedef struct NimStringDesc NimStringDesc;
+typedef struct TGenericSeq TGenericSeq;
+struct TGenericSeq {
+NI len;
+NI reserved;
+};
+struct NimStringDesc {
+  TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-struct NimStringV2 {
-NI len;
-NimStrPayload* p;
-};
-struct TNimType {
-void* destructor;
-NI size;
-NCSTRING name;
-};
-struct RootObj {
-TNimType* m_type;
-};
-struct tySequence__uB9b75OUPRENsBAu4AnoePA {
-  NI len; tySequence__uB9b75OUPRENsBAu4AnoePA_Content* p;
-};
-struct Exception {
-  RootObj Sup;
-Exception* parent;
-NCSTRING name;
-NimStringV2 message;
-tySequence__uB9b75OUPRENsBAu4AnoePA trace;
-NU raiseId;
-Exception* up;
-};
-typedef struct {
-N_NIMCALL_PTR(NIM_BOOL, ClP_0) (Exception* e, void* ClE_0);
-void* ClE_0;
-} tyProc__NT9bSe2DDkjdtx7j9aov2Z6g;
-struct TSafePoint {
-TSafePoint* prev;
-NI status;
-jmp_buf context;
-NIM_BOOL hasRaiseAction;
-tyProc__NT9bSe2DDkjdtx7j9aov2Z6g raiseAction;
-};
-typedef N_NIMCALL_PTR(void*, tyProc__g4DU8Xso7TeLfKjjMA54hg) (AllocatorObj* a, NI size, NI alignment);
-typedef N_NIMCALL_PTR(void, tyProc__f0fmYWZ9bBl5n2coKW0dYBQ) (AllocatorObj* a, void* p, NI size);
-typedef N_NIMCALL_PTR(void*, tyProc__pc9bof8Viqlm9byLAeLaBy4g) (AllocatorObj* a, void* p, NI oldSize, NI newSize);
-typedef N_NIMCALL_PTR(void, tyProc__up7108S0Kt9cUg781lCWRSQ) (AllocatorObj* a);
-typedef NU8 tySet_tyEnum_AllocatorFlag__djJDT3jOEYT7cpwNwzEzRg;
-struct AllocatorObj {
-TNimType* m_type;
-tyProc__g4DU8Xso7TeLfKjjMA54hg alloc;
-tyProc__f0fmYWZ9bBl5n2coKW0dYBQ dealloc;
-tyProc__pc9bof8Viqlm9byLAeLaBy4g realloc;
-tyProc__up7108S0Kt9cUg781lCWRSQ deallocAll;
-tySet_tyEnum_AllocatorFlag__djJDT3jOEYT7cpwNwzEzRg flags;
-NCSTRING name;
-NI allocCount;
-NI deallocCount;
-};
-struct tyObject_StackTraceEntry__oLyohQ7O2XOvGnflOss8EA {
-NCSTRING procname;
-NI line;
-NCSTRING filename;
-};
-
-
-#ifndef tySequence__uB9b75OUPRENsBAu4AnoePA_Content_PP
-#define tySequence__uB9b75OUPRENsBAu4AnoePA_Content_PP
-struct tySequence__uB9b75OUPRENsBAu4AnoePA_Content { NI cap;AllocatorObj* allocator;tyObject_StackTraceEntry__oLyohQ7O2XOvGnflOss8EA data[SEQ_DECL_SIZE];};
-#endif
-
-      static N_INLINE(void, pushSafePoint)(TSafePoint* s);
-N_LIB_PRIVATE N_NIMCALL(void, eq___aBBXmHFBEivKqERloP6zmA_2)(NimStringV2* dest, NimStringV2 src);
 N_NOINLINE(void, raiseIndexError2)(NI i, NI n);
-static N_INLINE(NCSTRING, nimToCStringConv)(NimStringV2 s);
+static N_INLINE(NCSTRING, nimToCStringConv)(NimStringDesc* s);
 static N_INLINE(NI, addInt)(NI a, NI b);
 N_NOINLINE(void, raiseOverflow)(void);
-static N_INLINE(void, popSafePoint)(void);
-static N_INLINE(TFrame*, getFrame)(void);
-static N_INLINE(void, setFrame)(TFrame* s);
-N_LIB_PRIVATE N_NIMCALL(void, eqdestroy___dS1BF3Vxjg9aJMmmhVJKSpQ)(NimStringV2* dest);
-N_NIMCALL(void, reraiseException)(void);
 static N_INLINE(void, nimFrame)(TFrame* s);
 N_LIB_PRIVATE N_NOINLINE(void, callDepthLimitReached__mMRdr4sgmnykA9aWeM9aDZlw)(void);
 static N_INLINE(void, popFrame)(void);
-extern TSafePoint* excHandler__rqLlY5bs9atDw2OXYqJEn5g;
-extern TSafePoint* excHandler__rqLlY5bs9atDw2OXYqJEn5g;
-extern TSafePoint* excHandler__rqLlY5bs9atDw2OXYqJEn5g;
-extern TSafePoint* excHandler__rqLlY5bs9atDw2OXYqJEn5g;
-extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
-extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
@@ -134,23 +52,23 @@ extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TFrame* framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
 
-static N_INLINE(void, pushSafePoint)(TSafePoint* s) {
-	(*s).hasRaiseAction = NIM_FALSE;
-	(*s).prev = excHandler__rqLlY5bs9atDw2OXYqJEn5g;
-	excHandler__rqLlY5bs9atDw2OXYqJEn5g = s;
-}
-
-static N_INLINE(NCSTRING, nimToCStringConv)(NimStringV2 s) {
+static N_INLINE(NCSTRING, nimToCStringConv)(NimStringDesc* s) {
 	NCSTRING result;
 	result = (NCSTRING)0;
 	{
-		if (!(s.len == ((NI) 0))) goto LA3_;
+		NIM_BOOL T3_;
+		T3_ = (NIM_BOOL)0;
+		T3_ = (s == NIM_NIL);
+		if (T3_) goto LA4_;
+		T3_ = ((*s).Sup.len == ((NI) 0));
+		LA4_: ;
+		if (!T3_) goto LA5_;
 		result = "";
 	}
 	goto LA1_;
-	LA3_: ;
+	LA5_: ;
 	{
-		result = ((NCSTRING) ((*s.p).data));
+		result = ((NCSTRING) ((*s).data));
 	}
 	LA1_: ;
 	return result;
@@ -174,21 +92,6 @@ static N_INLINE(NI, addInt)(NI a, NI b) {
 	raiseOverflow();
 	}BeforeRet_: ;
 	return result;
-}
-
-static N_INLINE(void, popSafePoint)(void) {
-	excHandler__rqLlY5bs9atDw2OXYqJEn5g = (*excHandler__rqLlY5bs9atDw2OXYqJEn5g).prev;
-}
-
-static N_INLINE(TFrame*, getFrame)(void) {
-	TFrame* result;
-	result = (TFrame*)0;
-	result = framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw;
-	return result;
-}
-
-static N_INLINE(void, setFrame)(TFrame* s) {
-	framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw = s;
 }
 
 static N_INLINE(void, nimFrame)(TFrame* s) {
@@ -218,64 +121,46 @@ static N_INLINE(void, popFrame)(void) {
 	framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw = (*framePtr__HRfVMH3jYeBJz6Q6X9b6Ptw).prev;
 }
 
-N_NIMCALL(void, echoBinSafe)(NimStringV2* args, NI argsLen_0) {
-	NimStringV2 s;
-	TSafePoint TM__MnCJ0VAmeZ9aTATUB39cx60Q_2;
-	TFrame* _nimCurFrame;
+N_NIMCALL(void, echoBinSafe)(NimStringDesc** args, NI argsLen_0) {
+	int T5_;
+	int T6_;
 	nimfr_("echoBinSafe", "/p/Nim/lib/system/io.nim");
-	_nimCurFrame = getFrame();
-	s.len = 0; s.p = NIM_NIL;
-	nimln_(602, "/p/Nim/lib/system/io.nim");
-	pushSafePoint(&TM__MnCJ0VAmeZ9aTATUB39cx60Q_2);
-	TM__MnCJ0VAmeZ9aTATUB39cx60Q_2.status = setjmp(TM__MnCJ0VAmeZ9aTATUB39cx60Q_2.context);
-	if (TM__MnCJ0VAmeZ9aTATUB39cx60Q_2.status == 0) {
-		int T6_;
-		int T7_;
-		nimln_(605, "/p/Nim/lib/system/io.nim");
-		flockfile(stdout);
-		{
-			NI i;
-			nimln_(3, "/p/Nim/lib/system/iterators.nim");
-			i = ((NI) 0);
-			{
-				nimln_(4, "/p/Nim/lib/system/iterators.nim");
-				while (1) {
-					int T5_;
-					NI TM__MnCJ0VAmeZ9aTATUB39cx60Q_3;
-					if (!(i < argsLen_0)) goto LA4;
-					nimln_(34, "/p/Nim/lib/system/fatal.nim");
-					if ((NU)(i) >= (NU)(argsLen_0)) raiseIndexError2(i,argsLen_0-1);
-					eq___aBBXmHFBEivKqERloP6zmA_2((&s), args[i]);
-					nimln_(612, "/p/Nim/lib/system/io.nim");
-					T5_ = (int)0;
-					T5_ = fwrite(((void*) (nimToCStringConv(s))), s.len, ((NI) 1), stdout);
-					(void)(T5_);
-					nimln_(6, "/p/Nim/lib/system/iterators.nim");
-					TM__MnCJ0VAmeZ9aTATUB39cx60Q_3 = addInt(i, ((NI) 1));
-					i = (NI)(TM__MnCJ0VAmeZ9aTATUB39cx60Q_3);
-				} LA4: ;
-			}
-		}
-		nimln_(614, "/p/Nim/lib/system/io.nim");
-		T6_ = (int)0;
-		T6_ = fwrite(((void*) ("\012")), ((NI) 1), ((NI) 1), stdout);
-		(void)(T6_);
-		nimln_(615, "/p/Nim/lib/system/io.nim");
-		T7_ = (int)0;
-		T7_ = fflush(stdout);
-		(void)(T7_);
-		nimln_(617, "/p/Nim/lib/system/io.nim");
-		funlockfile(stdout);
-		popSafePoint();
-	}
-	else {
-		popSafePoint();
-		setFrame(_nimCurFrame);
-	}
+	nimln_(605, "/p/Nim/lib/system/io.nim");
+	flockfile(stdout);
 	{
-		nimln_(34, "/p/Nim/lib/system/fatal.nim");
-		eqdestroy___dS1BF3Vxjg9aJMmmhVJKSpQ((&s));
+		NimStringDesc* s;
+		NI i;
+		s = (NimStringDesc*)0;
+		nimln_(3, "/p/Nim/lib/system/iterators.nim");
+		i = ((NI) 0);
+		{
+			nimln_(4, "/p/Nim/lib/system/iterators.nim");
+			while (1) {
+				int T4_;
+				NI TM__MnCJ0VAmeZ9aTATUB39cx60Q_2;
+				if (!(i < argsLen_0)) goto LA3;
+				nimln_(608, "/p/Nim/lib/system/io.nim");
+				if ((NU)(i) >= (NU)(argsLen_0)) raiseIndexError2(i,argsLen_0-1);
+				s = args[i];
+				nimln_(612, "/p/Nim/lib/system/io.nim");
+				T4_ = (int)0;
+				T4_ = fwrite(((void*) (nimToCStringConv(s))), (s ? s->Sup.len : 0), ((NI) 1), stdout);
+				(void)(T4_);
+				nimln_(6, "/p/Nim/lib/system/iterators.nim");
+				TM__MnCJ0VAmeZ9aTATUB39cx60Q_2 = addInt(i, ((NI) 1));
+				i = (NI)(TM__MnCJ0VAmeZ9aTATUB39cx60Q_2);
+			} LA3: ;
+		}
 	}
-	if (TM__MnCJ0VAmeZ9aTATUB39cx60Q_2.status != 0) reraiseException();
+	nimln_(614, "/p/Nim/lib/system/io.nim");
+	T5_ = (int)0;
+	T5_ = fwrite(((void*) ("\012")), ((NI) 1), ((NI) 1), stdout);
+	(void)(T5_);
+	nimln_(615, "/p/Nim/lib/system/io.nim");
+	T6_ = (int)0;
+	T6_ = fflush(stdout);
+	(void)(T6_);
+	nimln_(617, "/p/Nim/lib/system/io.nim");
+	funlockfile(stdout);
 	popFrame();
 }

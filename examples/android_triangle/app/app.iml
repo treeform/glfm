@@ -36,7 +36,6 @@
       <sourceFolder url="file://$USER_HOME$/Library/Android/sdk/ndk-bundle/sources/android/native_app_glue" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/cpp/Users/andre.vonhouck/Library/Android/sdk/ndk-bundle/sources/android/native_app_glue" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/aidl_source_output_dir/debug/compileDebugAidl/out" isTestSource="false" generated="true" />
@@ -116,8 +115,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant_app_manifest" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant_run_merged_manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javac" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint_jar" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/merged_assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/merged_jni_libs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/merged_manifests" />
@@ -126,15 +123,14 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/processed_res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shader_assets" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/signing_config" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/validate_signing_config" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
+      <excludeFolder url="file://$MODULE_DIR$/build/reports" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />

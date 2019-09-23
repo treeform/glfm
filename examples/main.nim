@@ -25,7 +25,18 @@ proc onKey*(display: ptr GLFMDisplay; keyCode: GLFMKey; action: GLFMKeyAction;
 
 var app: ExampleApp
 
+proc NimMain() {.importc.} # use --noMain:on which generates NimMain() instead of C main()
+
 proc glfmMain*(display: ptr GLFMDisplay) {.exportc.} =
+
+  # echo "run NimMain"
+  NimMain() # call nim main to setup GC and other things.
+  # echo "end of NimMain"
+
+  echo "test allocation"
+  var s = newSeq[byte](100)
+  echo s.len
+  echo "done allocation test"
 
   #var app: ptr ExampleApp = calloc(1, sizeof((ExampleApp)))
   #app = ExampleApp()
@@ -150,9 +161,9 @@ proc compileShader*(`type`: GLenum; shaderString: string): GLuint =
 #   simpleFrag = staticRead("simple.frag")
 
 proc readAssetFile*(filename: string): string =
-  let size = int glfmReadFileSize("assets/" & filename)
+  let size = int glfmReadFileSize(filename)
   result = newString(size)
-  discard glfmReadFileBuffer("assets/" & filename, result)
+  discard glfmReadFileBuffer(filename, result)
 
 proc onFrame*(display: ptr GLFMDisplay; frameTime: cdouble) {.exportc.} =
   #var app: ptr ExampleApp = cast[ptr ExampleApp](glfmGetUserData(display))
@@ -178,41 +189,9 @@ proc onFrame*(display: ptr GLFMDisplay; frameTime: cdouble) {.exportc.} =
     glDeleteShader(fragShader)
     echo "setup done"
 
-    # {.emit: """
-    # printf("filePath: %s\n", getenv("HOME"));
-    # """.}
-
-    # echo "path to resources"
-    # echo "home dir:", glfmHomeDir()
-
-    # echo "getCurrentDir:", getCurrentDir()
-    # echo "getAppDir", getAppDir()
-    # echo glfmBundleDir()
-
-    # for e in @["PWD", "HOME", "LANG", "TMPDIR", "ANDROID_DATA", "LD_PRELOAD"]:
-    #   if existsEnv(e):
-    #     echo e, ": ", getEnv(e)
-    #   else:
-    #     echo e, ": ", "Does not exist"
-
-    # for n, k in envPairs():
-    #   echo n, ": ",k
-    # echo "{{{{"
-    # echo readAssetFile("data.txt")
-    # echo "}}}}"
-    # echo readAssetFile("icons/data.txt")
-    # echo readFile($glfmBundleDir() & "/icons/data.txt")
-
-    # echo "starting to read file"
-    # echo staticRead("../assets/data.txt")
-    # echo "end read file"
-
-  #echo "glUseProgram"
   glUseProgram(app.program)
-  #echo "glGenBuffers"
   if app.vertexBuffer == 0:
     glGenBuffers(1, addr(app.vertexBuffer))
-  #echo "glBindBuffer"
   glBindBuffer(GL_ARRAY_BUFFER, app.vertexBuffer)
   var stride: GLsizei = sizeof(GLfloat) * 6
   glEnableVertexAttribArray(0)
@@ -220,32 +199,18 @@ proc onFrame*(display: ptr GLFMDisplay; frameTime: cdouble) {.exportc.} =
   glEnableVertexAttribArray(1)
   glVertexAttribPointer(1, 3, cGL_FLOAT, GL_FALSE, stride, cast[pointer](sizeof(GLfloat) * 3))
 
-
-  # echo "app.offsets"
-  # echo app.offsetX
-  # echo app.offsetY
-
-
-  #echo "vertices"
-  # app.offsetX = 0.0
-  # app.offsetY = 0.0
-
-  #echo "pre allocation"
-
   var vertices = @[
     app.offsetX.float32 + 0.0.float32, app.offsetY.float32 + 0.5, 0.0, 1.0, 0.0, 0.0,
     app.offsetX.float32 - 0.5.float32, app.offsetY.float32 - 0.5, 0.0, 0.0, 1.0, 0.0,
     app.offsetX.float32 + 0.5.float32, app.offsetY.float32 - 0.5, 0.0, 0.0, 0.0, 1.0] ##  x,y,z, r,g,b
-  #echo "post allocation"
 
-  # var vertices = @[
-  #   + 0.0.float32, + 0.5, 0.0, 1.0, 0.0, 0.0,
-  #   - 0.5, - 0.5, 0.0, 0.0, 1.0, 0.0,
-  #   + 0.5, - 0.5, 0.0, 0.0, 0.0, 1.0] ##  x,y,z, r,g,b
-
-  #echo "glBufferData", vertices.len*4
   glBufferData(GL_ARRAY_BUFFER, vertices.len*4, addr(vertices[0]), GL_STATIC_DRAW)
-  #echo "glDrawArrays"
   glDrawArrays(GL_TRIANGLES, 0, 3)
 
-  #echo "done onFrame"
+
+echo "test allocation 1"
+var s = newSeq[byte](100)
+echo s.len
+echo "done allocation test 1"
+
+#glfmStart()

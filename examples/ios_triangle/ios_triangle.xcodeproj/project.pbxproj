@@ -7,62 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85BC81482332880800E8E3D8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8527915B2332767D00885FC8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */; };
-		85BC81492332880A00E8E3D8 /* @mmain.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791612332767D00885FC8 /* @mmain.nim.c */; };
-		85BC814A2332881F00E8E3D8 /* glfm_platform_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 852791602332767D00885FC8 /* glfm_platform_ios.m */; };
-		85BC814B2332882300E8E3D8 /* stdlib_allocators.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8527915A2332767D00885FC8 /* stdlib_allocators.nim.c */; };
-		85BC814C2332882300E8E3D8 /* stdlib_assertions.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8527915C2332767D00885FC8 /* stdlib_assertions.nim.c */; };
-		85BC814D2332882300E8E3D8 /* stdlib_io.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791622332767D00885FC8 /* stdlib_io.nim.c */; };
-		85BC814E2332882300E8E3D8 /* stdlib_os.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8527915E2332767D00885FC8 /* stdlib_os.nim.c */; };
-		85BC814F2332882300E8E3D8 /* stdlib_pathnorm.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791692332767D00885FC8 /* stdlib_pathnorm.nim.c */; };
-		85BC81502332882300E8E3D8 /* stdlib_posix.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8527915D2332767D00885FC8 /* stdlib_posix.nim.c */; };
-		85BC81512332882300E8E3D8 /* stdlib_strutils.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791642332767D00885FC8 /* stdlib_strutils.nim.c */; };
-		85BC81522332882300E8E3D8 /* stdlib_system.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791672332767D00885FC8 /* stdlib_system.nim.c */; };
-		85BC81532332882300E8E3D8 /* stdlib_times.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 852791652332767D00885FC8 /* stdlib_times.nim.c */; };
-		85BC815E23328ED900E8E3D8 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 85BC815D23328ED900E8E3D8 /* assets */; };
+		85BC81612332924D00E8E3D8 /* simple.frag in Resources */ = {isa = PBXBuildFile; fileRef = 85BC815F2332924C00E8E3D8 /* simple.frag */; };
+		85BC81622332924D00E8E3D8 /* simple.vert in Resources */ = {isa = PBXBuildFile; fileRef = 85BC81602332924D00E8E3D8 /* simple.vert */; };
+		85BC81642332925400E8E3D8 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 85BC81632332925400E8E3D8 /* data.txt */; };
+		85BC81662332925900E8E3D8 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 85BC81652332925900E8E3D8 /* icons */; };
+		85BC81782332B3CB00E8E3D8 /* stdlib_io.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 85BC816F2332B3CB00E8E3D8 /* stdlib_io.nim.c */; };
+		85BC81792332B3CB00E8E3D8 /* glfm_platform_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BC81702332B3CB00E8E3D8 /* glfm_platform_ios.m */; };
+		85BC817A2332B3CB00E8E3D8 /* stdlib_system.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 85BC81712332B3CB00E8E3D8 /* stdlib_system.nim.c */; };
+		85BC817B2332B3CB00E8E3D8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 85BC81752332B3CB00E8E3D8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */; };
+		85BC817C2332B3CB00E8E3D8 /* @mmain.nim.c in Sources */ = {isa = PBXBuildFile; fileRef = 85BC81772332B3CB00E8E3D8 /* @mmain.nim.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8527915A2332767D00885FC8 /* stdlib_allocators.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_allocators.nim.c; path = examples/ios_triangle/src/stdlib_allocators.nim.c; sourceTree = "<group>"; };
-		8527915B2332767D00885FC8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "@m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c"; path = "examples/ios_triangle/src/@m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c"; sourceTree = "<group>"; };
-		8527915C2332767D00885FC8 /* stdlib_assertions.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_assertions.nim.c; path = examples/ios_triangle/src/stdlib_assertions.nim.c; sourceTree = "<group>"; };
-		8527915D2332767D00885FC8 /* stdlib_posix.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_posix.nim.c; path = examples/ios_triangle/src/stdlib_posix.nim.c; sourceTree = "<group>"; };
-		8527915E2332767D00885FC8 /* stdlib_os.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_os.nim.c; path = examples/ios_triangle/src/stdlib_os.nim.c; sourceTree = "<group>"; };
-		8527915F2332767D00885FC8 /* nimbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nimbase.h; path = examples/ios_triangle/src/nimbase.h; sourceTree = "<group>"; };
-		852791602332767D00885FC8 /* glfm_platform_ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = glfm_platform_ios.m; path = examples/ios_triangle/src/glfm_platform_ios.m; sourceTree = "<group>"; };
-		852791612332767D00885FC8 /* @mmain.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "@mmain.nim.c"; path = "examples/ios_triangle/src/@mmain.nim.c"; sourceTree = "<group>"; };
-		852791622332767D00885FC8 /* stdlib_io.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_io.nim.c; path = examples/ios_triangle/src/stdlib_io.nim.c; sourceTree = "<group>"; };
-		852791632332767D00885FC8 /* glfm_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glfm_platform.h; path = examples/ios_triangle/src/glfm_platform.h; sourceTree = "<group>"; };
-		852791642332767D00885FC8 /* stdlib_strutils.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_strutils.nim.c; path = examples/ios_triangle/src/stdlib_strutils.nim.c; sourceTree = "<group>"; };
-		852791652332767D00885FC8 /* stdlib_times.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_times.nim.c; path = examples/ios_triangle/src/stdlib_times.nim.c; sourceTree = "<group>"; };
-		852791662332767D00885FC8 /* file_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = file_compat.h; path = examples/ios_triangle/src/file_compat.h; sourceTree = "<group>"; };
-		852791672332767D00885FC8 /* stdlib_system.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_system.nim.c; path = examples/ios_triangle/src/stdlib_system.nim.c; sourceTree = "<group>"; };
-		852791682332767D00885FC8 /* glfm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glfm.h; path = examples/ios_triangle/src/glfm.h; sourceTree = "<group>"; };
-		852791692332767D00885FC8 /* stdlib_pathnorm.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_pathnorm.nim.c; path = examples/ios_triangle/src/stdlib_pathnorm.nim.c; sourceTree = "<group>"; };
 		852791BF23327BA600885FC8 /* ios_triangle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_triangle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		85BC815D23328ED900E8E3D8 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = examples/ios_triangle/assets; sourceTree = "<group>"; };
+		85BC815F2332924C00E8E3D8 /* simple.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = simple.frag; path = examples/ios_triangle/simple.frag; sourceTree = "<group>"; };
+		85BC81602332924D00E8E3D8 /* simple.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = simple.vert; path = examples/ios_triangle/simple.vert; sourceTree = "<group>"; };
+		85BC81632332925400E8E3D8 /* data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = data.txt; path = examples/ios_triangle/data.txt; sourceTree = "<group>"; };
+		85BC81652332925900E8E3D8 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = examples/ios_triangle/icons; sourceTree = "<group>"; };
+		85BC816F2332B3CB00E8E3D8 /* stdlib_io.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_io.nim.c; path = examples/ios_triangle/src/stdlib_io.nim.c; sourceTree = "<group>"; };
+		85BC81702332B3CB00E8E3D8 /* glfm_platform_ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = glfm_platform_ios.m; path = examples/ios_triangle/src/glfm_platform_ios.m; sourceTree = "<group>"; };
+		85BC81712332B3CB00E8E3D8 /* stdlib_system.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stdlib_system.nim.c; path = examples/ios_triangle/src/stdlib_system.nim.c; sourceTree = "<group>"; };
+		85BC81722332B3CB00E8E3D8 /* nimbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nimbase.h; path = examples/ios_triangle/src/nimbase.h; sourceTree = "<group>"; };
+		85BC81732332B3CB00E8E3D8 /* glfm_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glfm_platform.h; path = examples/ios_triangle/src/glfm_platform.h; sourceTree = "<group>"; };
+		85BC81742332B3CB00E8E3D8 /* file_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = file_compat.h; path = examples/ios_triangle/src/file_compat.h; sourceTree = "<group>"; };
+		85BC81752332B3CB00E8E3D8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "@m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c"; path = "examples/ios_triangle/src/@m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c"; sourceTree = "<group>"; };
+		85BC81762332B3CB00E8E3D8 /* glfm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glfm.h; path = examples/ios_triangle/src/glfm.h; sourceTree = "<group>"; };
+		85BC81772332B3CB00E8E3D8 /* @mmain.nim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "@mmain.nim.c"; path = "examples/ios_triangle/src/@mmain.nim.c"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		5527756E9FC84E2F88BEEA2B /* src */ = {
 			isa = PBXGroup;
 			children = (
-				8527915B2332767D00885FC8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */,
-				852791612332767D00885FC8 /* @mmain.nim.c */,
-				852791662332767D00885FC8 /* file_compat.h */,
-				852791602332767D00885FC8 /* glfm_platform_ios.m */,
-				852791632332767D00885FC8 /* glfm_platform.h */,
-				852791682332767D00885FC8 /* glfm.h */,
-				8527915F2332767D00885FC8 /* nimbase.h */,
-				8527915A2332767D00885FC8 /* stdlib_allocators.nim.c */,
-				8527915C2332767D00885FC8 /* stdlib_assertions.nim.c */,
-				852791622332767D00885FC8 /* stdlib_io.nim.c */,
-				8527915E2332767D00885FC8 /* stdlib_os.nim.c */,
-				852791692332767D00885FC8 /* stdlib_pathnorm.nim.c */,
-				8527915D2332767D00885FC8 /* stdlib_posix.nim.c */,
-				852791642332767D00885FC8 /* stdlib_strutils.nim.c */,
-				852791672332767D00885FC8 /* stdlib_system.nim.c */,
-				852791652332767D00885FC8 /* stdlib_times.nim.c */,
+				85BC81752332B3CB00E8E3D8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c */,
+				85BC81772332B3CB00E8E3D8 /* @mmain.nim.c */,
+				85BC81742332B3CB00E8E3D8 /* file_compat.h */,
+				85BC81702332B3CB00E8E3D8 /* glfm_platform_ios.m */,
+				85BC81732332B3CB00E8E3D8 /* glfm_platform.h */,
+				85BC81762332B3CB00E8E3D8 /* glfm.h */,
+				85BC81722332B3CB00E8E3D8 /* nimbase.h */,
+				85BC816F2332B3CB00E8E3D8 /* stdlib_io.nim.c */,
+				85BC81712332B3CB00E8E3D8 /* stdlib_system.nim.c */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -70,9 +55,12 @@
 		C552D03A278C4BAEA62884E5 = {
 			isa = PBXGroup;
 			children = (
-				85BC815D23328ED900E8E3D8 /* assets */,
 				5527756E9FC84E2F88BEEA2B /* src */,
 				852791BF23327BA600885FC8 /* ios_triangle.app */,
+				85BC815F2332924C00E8E3D8 /* simple.frag */,
+				85BC81602332924D00E8E3D8 /* simple.vert */,
+				85BC81632332925400E8E3D8 /* data.txt */,
+				85BC81652332925900E8E3D8 /* icons */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,7 +120,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85BC815E23328ED900E8E3D8 /* assets in Resources */,
+				85BC81622332924D00E8E3D8 /* simple.vert in Resources */,
+				85BC81662332925900E8E3D8 /* icons in Resources */,
+				85BC81642332925400E8E3D8 /* data.txt in Resources */,
+				85BC81612332924D00E8E3D8 /* simple.frag in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,18 +134,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85BC81482332880800E8E3D8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c in Sources */,
-				85BC81512332882300E8E3D8 /* stdlib_strutils.nim.c in Sources */,
-				85BC814A2332881F00E8E3D8 /* glfm_platform_ios.m in Sources */,
-				85BC814F2332882300E8E3D8 /* stdlib_pathnorm.nim.c in Sources */,
-				85BC81532332882300E8E3D8 /* stdlib_times.nim.c in Sources */,
-				85BC814C2332882300E8E3D8 /* stdlib_assertions.nim.c in Sources */,
-				85BC814E2332882300E8E3D8 /* stdlib_os.nim.c in Sources */,
-				85BC81492332880A00E8E3D8 /* @mmain.nim.c in Sources */,
-				85BC814B2332882300E8E3D8 /* stdlib_allocators.nim.c in Sources */,
-				85BC81522332882300E8E3D8 /* stdlib_system.nim.c in Sources */,
-				85BC814D2332882300E8E3D8 /* stdlib_io.nim.c in Sources */,
-				85BC81502332882300E8E3D8 /* stdlib_posix.nim.c in Sources */,
+				85BC817A2332B3CB00E8E3D8 /* stdlib_system.nim.c in Sources */,
+				85BC81782332B3CB00E8E3D8 /* stdlib_io.nim.c in Sources */,
+				85BC817C2332B3CB00E8E3D8 /* @mmain.nim.c in Sources */,
+				85BC817B2332B3CB00E8E3D8 /* @m..@s..@s..@sUsers@sandre.vonhouck@s.nimble@spkgs@sopengl-@hhead@sopengl.nim.c in Sources */,
+				85BC81792332B3CB00E8E3D8 /* glfm_platform_ios.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

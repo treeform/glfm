@@ -305,5 +305,5 @@ proc glfmHomeDir*(): cstring
 proc glfmBundleDir*(): cstring
 proc glfmReadFileSize*(filename: cstring): cint
 proc glfmReadFileBuffer*(filename, buffer: cstring): cint
-
+proc glfmStart*()
 {.pop.}

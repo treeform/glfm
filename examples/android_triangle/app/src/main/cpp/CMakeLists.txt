@@ -34,14 +34,14 @@ add_library(native-activity SHARED
         @mmain.nim.c
         glfm_platform_android.c
 
-        stdlib_allocators.nim.c
+        #stdlib_allocators.nim.c
         #stdlib_assertions.nim.c
         stdlib_io.nim.c
         #stdlib_os.nim.c
         #stdlib_pathnorm.nim.c
-        stdlib_strutils.nim.c
+        #stdlib_strutils.nim.c
         stdlib_system.nim.c
-        stdlib_times.nim.c
+        #stdlib_times.nim.c
         )
 
 target_include_directories(native-activity PRIVATE
